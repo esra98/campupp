@@ -698,6 +698,7 @@ const CommentArea = ({ owner,placeId }) => {
                 <div className='flex gap-8 mt-4'>
                 {comment?.images?.length>0 && comment?.images.map(image => (
                   <ModalImage
+                    key={image}
                     className='h-24 border rounded-lg shadow'
                     small={image}
                     large={image}

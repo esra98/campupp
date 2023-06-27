@@ -643,6 +643,7 @@ const options = [
                               <div className='flex gap-8 my-3'>
                                 {viewedEventImages?.length>0 && viewedEventImages.map(image => (
                                   <ModalImage
+                                  key={image}
                                   className='h-24 border rounded-lg shadow'
                                   small={image}
                                   large={image}
@@ -892,7 +893,7 @@ const options = [
               )}
               <div className='lg:grid-cols-3 max-w-none mx-0 mt-20 gap-8 grid-rows-auto grid px-0 md:px-16'>
                 {events?.length>0 && events.map(event => (
-                  <Link href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
+                  <Link key={event._id} href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
                     {event.category==="Movement" && event.images.length==0 && (
                       <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
                     )}
