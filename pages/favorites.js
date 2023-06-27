@@ -177,7 +177,7 @@ export default function CampsiteAdd(){
               {campsites.length !== 0 && campsites.map((person) => (
                 
                 
-              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5">
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5" key={person._id}>
                   <Link href="#">
                       <img class="rounded-t-lg object-cover h-64 w-full" src={person.images[0] ? person.images[0] :"https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png" } alt="" />
                   </Link>

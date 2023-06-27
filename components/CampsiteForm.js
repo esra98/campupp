@@ -427,7 +427,7 @@ export default function ProductForm({
                             </div>
                             <div className="py-3 px-12 bg-yellow-100 opacity-50 mt-6 rounded-lg  shadow-sm flex gap-2">
                                 <FiAlertTriangle className="h-10 w-10 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
-                                <p className="text-sm opacity-100 text-black">Telefon numaranızı <span className="font-bold">"905*********"</span> formatında yazmamanız durumunda, profilinizdeki WhatsApp üzerinden mesaj at butonu doğru çalışmayacaktır. Numaranızı başında + işareti olmadan 90 yazarak başlatıp rakamlar arasında boşluk bırakmayız.</p>
+                                <p className="text-sm opacity-100 text-black">Telefon numaranızı <span className="font-bold">&apos;905*********&apos;</span> formatında yazmamanız durumunda, profilinizdeki WhatsApp üzerinden mesaj at butonu doğru çalışmayacaktır. Numaranızı başında + işareti olmadan 90 yazarak başlatıp rakamlar arasında boşluk bırakmayız.</p>
                             </div>
                             <div className="flex rounded-md mt-5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                 <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm font-bold">Instagram sayfası :</span>

@@ -247,7 +247,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                                     </div>
                                                     <div className="text-sm leading-6">
                                                         <label htmlFor="comments" className="font-medium text-gray-900">
-                                                        Kamp yerinde bungalow kiralama imkanından yararlanmak ister misiniz? <span className='font-normal'>(Ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine "soru sor" kısmı üzerinden ulaşınız.)</span>
+                                                        Kamp yerinde bungalow kiralama imkanından yararlanmak ister misiniz? <span className='font-normal'>(Ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine &apos;soru sor&apos; kısmı üzerinden ulaşınız.)</span>
                                                         </label>
                                                     </div> 
                                                 </div>
@@ -264,7 +264,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                                 </div>
                                                 <div className="text-sm leading-6">
                                                     <label htmlFor="comments" className="font-medium text-gray-900">
-                                                    Karavan ile mi konaklama yapmak istiyorsunuz? <span className='font-normal'>(Karavanlar için ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine "soru sor" kısmı üzerinden ulaşınız.)</span>
+                                                    Karavan ile mi konaklama yapmak istiyorsunuz? <span className='font-normal'>(Karavanlar için ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine &apos;soru sor&apos; kısmı üzerinden ulaşınız.)</span>
                                                     </label>
                                                 </div> 
                                             </div>

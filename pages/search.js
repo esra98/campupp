@@ -35,7 +35,7 @@ export default function CampsiteAdd(){
       <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
       <Layout>
           <div className="py-8 bg-opacity-100 bg-gray-100 h-screen px-16">
-              <div><span className="font-bold">"{searched}"</span> ile ilgili sonuçlar:</div>
+              <div><span className="font-bold">&apos;{searched}&apos;</span> ile ilgili sonuçlar:</div>
               <div>
               {campsites.length == 0 && (
                   <div class=" h-screen flex items-center">

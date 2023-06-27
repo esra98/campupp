@@ -7,7 +7,7 @@ export default function EventSlider({photos}) {
         <div className="slider">
           <div className="slides">
             {photos?.length>0 && photos.map(photo => (
-                <img className="rounded-2xl flex object-cover aspect-square" src={photo} />
+                <img className="rounded-2xl flex object-cover aspect-square" src={photo} key={photo}/>
             ))}
             {!photos?.length>0 && (
                 <div></div>
