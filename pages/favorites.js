@@ -178,25 +178,25 @@ export default function CampsiteAdd(){
                 
                 
               <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5">
-                  <a href="#">
+                  <Link href="#">
                       <img class="rounded-t-lg object-cover h-64 w-full" src={person.images[0] ? person.images[0] :"https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png" } alt="" />
-                  </a>
+                  </Link>
                   <div class="p-5">
-                      <a href="#">
+                      <Link href="#">
                           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{person.title}</h5>
-                      </a>
+                      </Link>
                       <p class="mb-3 font-normal text-gray-700 h-8 truncate overflow-hidden">{person.description}</p>
                       <div className="block">
-                        <a onClick={() => openModal(person._id)} class="inline-flex gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
+                        <button onClick={() => openModal(person._id)} class="inline-flex gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
                             Favorilerimden Çıkart
                             <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                        </a>
+                        </button>
                       </div>
                       <div className="mt-3">
-                        <a href={"/campsite/view/"+person._id}  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
+                        <Link href={"/campsite/view/"+person._id}  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
                           Kamp Yeri Detay
                             <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a>
+                        </Link>
 
                       </div>
                   </div>
@@ -214,7 +214,7 @@ export default function CampsiteAdd(){
                           className="h-72 object-center mx-auto -mt-32"
                       />
                       <p className="mb-3 font-semibold">Favorilediğiniz Kamp Yeri Bulunamadı </p>
-                      <a href="/"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</a>
+                      <Link href="/"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</Link>
                   </div>
                 </div>
               )}

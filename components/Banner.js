@@ -1,4 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/20/solid'
+import Link from "next/link";
 
 export default function Example() {
   return (
@@ -31,12 +32,12 @@ export default function Example() {
         <p className="leading-6 text-gray-900">
           <strong className="font-semibold">Kamp yapma fikri sizi heyecanlandırdı mı? ⛺😍</strong>
         </p>
-        <a
+        <Link
           href="/"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           Kamp Alanlarını İnceleyin <span aria-hidden="true">&rarr;</span>
-        </a>
+        </Link>
       </div>
       <div className="flex flex-1 justify-end">
         <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">

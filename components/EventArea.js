@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import { IoMdClose } from "react-icons/io";
 import { MdDateRange } from "react-icons/md";
 import { MultiSelect } from "react-multi-select-component";
+import Link from 'next/link';
 
 const options = [
   { label: 'Yoga', value: 'yoga' },
@@ -891,7 +892,7 @@ const options = [
               )}
               <div className='lg:grid-cols-3 max-w-none mx-0 mt-20 gap-8 grid-rows-auto grid px-0 md:px-16'>
                 {events?.length>0 && events.map(event => (
-                  <a href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
+                  <Link href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
                     {event.category==="Movement" && event.images.length==0 && (
                       <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
                     )}
@@ -952,7 +953,7 @@ const options = [
                       
                     </div>
                     
-                  </a>
+                  </Link>
                 ))}  
               </div>
             </div>

@@ -182,13 +182,13 @@ export default function Reservations(){
                                     className="h-72 object-center mx-auto -mt-32"
                                 />
                                 <p className="mb-3 font-semibold">Oluşturduğunuz rezervasyon talebi bulunamadı</p>
-                                <a  href="/"class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</a>
+                                <Link  href="/"class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</Link>
                             </div>
                         </div>
                     )}
                     <ul className="grid">
                         {reservationRequests.length !== 0 && reservationRequests.map((reservationRequest) => (
-                        <li className="shadow rounded-md bg-opacity-100 bg-white col-span-1 mt-5">
+                        <li className="shadow rounded-md bg-opacity-100 bg-white col-span-1 mt-5" key={reservationRequest._id}>
                             <div className="p-6 justify-between items-center w-full flex">
                             <div>
                                 <div className="px-4 sm:px-0">
@@ -250,10 +250,10 @@ export default function Reservations(){
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 rounded-md">
-                                <a onClick={()=>{setDeletedReservationId(reservationRequest?._id);openDeleteEventModal()}} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 cursor-pointer">
+                                <button onClick={()=>{setDeletedReservationId(reservationRequest?._id);openDeleteEventModal()}} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 cursor-pointer">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     Sil
-                                </a>
+                                </button>
                                 <Link href={'/campsite/view/' + reservationRequest?.campsite} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100">
                                     <AiOutlineDoubleRight className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     Kamp Yeri Detay

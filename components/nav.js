@@ -31,9 +31,9 @@ export default function Nav(){
             className="h-16"
           />
         </Link>
-        <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+        <Link href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Features
-        </a>
+        </Link>
         {session &&(
           <Popover className="relative m-5">
           <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -58,10 +58,10 @@ export default function Nav(){
                         <ChatBubbleLeftRightIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/events" className="font-semibold text-gray-900">
+                        <Link href="/events" className="font-semibold text-gray-900">
                            Etkinliklerim
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Etkinlik ekleyin</p>
                       </div>
                     </div>
@@ -70,10 +70,10 @@ export default function Nav(){
                         <ChatBubbleLeftRightIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/reservations" className="font-semibold text-gray-900">
+                        <Link href="/reservations" className="font-semibold text-gray-900">
                            Rezervasyonlarım
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Rezervasyon taleplerinizi yönetin</p>
                       </div>
                     </div>
@@ -82,10 +82,10 @@ export default function Nav(){
                         <StarIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href={'/favorites/'} className="font-semibold text-gray-900">
+                        <Link href={'/favorites/'} className="font-semibold text-gray-900">
                            Favoriler
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Favorilerinize eklediğiniz kamp yerlerini görün</p>
                       </div>
                     </div>
@@ -94,10 +94,10 @@ export default function Nav(){
                         <PlusCircleIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/campsite/new" className="font-semibold text-gray-900">
+                        <Link href="/campsite/new" className="font-semibold text-gray-900">
                           Kamp Yerinizi Ekleyin
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Kamp Yeri Sahibi Misiniz?</p>
                       </div>
                     </div>
@@ -106,10 +106,10 @@ export default function Nav(){
                         <PencilSquareIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/campsite/edit" className="font-semibold text-gray-900">
+                        <Link href="/campsite/edit" className="font-semibold text-gray-900">
                           Kamp Yerinizi Düzenleyin
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Kamp Yerinizi zaten eklediniz mi?</p>
                       </div>
                     </div>
@@ -118,10 +118,10 @@ export default function Nav(){
                         <LifebuoyIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/help" className="font-semibold text-gray-900">
+                        <Link href="/help" className="font-semibold text-gray-900">
                            Yardım
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Sorunuz Mu var?</p>
                       </div>
                     </div>
@@ -165,10 +165,10 @@ export default function Nav(){
                         <UserPlusIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/register" className="font-semibold text-gray-900">
+                        <Link href="/register" className="font-semibold text-gray-900">
                           Kayıt Olun
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Tüm Özelliklerden Faydalanmak İçin</p>
                       </div>
                     </div>
@@ -177,10 +177,10 @@ export default function Nav(){
                         <PlusCircleIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/account/places/new" className="font-semibold text-gray-900">
+                        <Link href="/account/places/new" className="font-semibold text-gray-900">
                           Kamp Yerinizi Ekleyin
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Kamp Yeri Sahibi Misiniz?</p>
                       </div>
                     </div>
@@ -189,10 +189,10 @@ export default function Nav(){
                         <LifebuoyIcon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                       </div>
                       <div>
-                        <a href="/help" className="font-semibold text-gray-900">
+                        <Link href="/help" className="font-semibold text-gray-900">
                            Yardım
                           <span className="absolute inset-0" />
-                        </a>
+                        </Link>
                         <p className="mt-1 text-gray-600">Sorunuz Mu var?</p>
                       </div>
                     </div>

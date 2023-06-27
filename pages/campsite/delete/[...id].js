@@ -34,7 +34,7 @@ export default function DeleteProductPage() {
       <div class=" h-screen flex items-center">
         <div class="text-center w-full">
           <p className="mb-3 font-semibold">Kamp yerinizi ({productInfo?.title}) silmek istediğinize emin misiniz? </p>
-          <p className="" href="/">Silme işlemini geri alamazsınız.</p>
+          <p>Silme işlemini geri alamazsınız.</p>
           <div>
             <button
               onClick={deleteProduct}

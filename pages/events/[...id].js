@@ -14,6 +14,7 @@ import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
 import { AiOutlineDelete,AiOutlineSend} from "react-icons/ai";
 import {FaEdit} from "react-icons/fa";
 import Script from 'next/script'
+import Link from "next/link";
 
 export default function CampsiteDetail() {
   const {data:session} = useSession();
@@ -483,21 +484,21 @@ export default function CampsiteDetail() {
                             <nav className="flex my-8 md:mt-0" aria-label="Breadcrumb">
                               <ol className="inline-flex items-center space-x-1 md:space-x-3">
                                 <li className="inline-flex items-center">
-                                  <a href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-black">
+                                  <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-black">
                                     <svg aria-hidden="true" className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                                     Anasayfa
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li>
                                   <div className="flex items-center">
                                     <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                    <a href={"/campsite/view/"+event?.campsite} className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Kamp Alanı</a>
+                                    <Link href={"/campsite/view/"+event?.campsite} className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Kamp Alanı</Link>
                                   </div>
                                 </li>
                                 <li>
                                   <div className="flex items-center">
                                     <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                    <a href="/blog" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Etkinlikler</a>
+                                    <Link href="/blog" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Etkinlikler</Link>
                                   </div>
                                 </li>
                               </ol>
@@ -505,34 +506,34 @@ export default function CampsiteDetail() {
                             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl mt-5">{event?.title}</h1>
                             <div>
                                 {event.contactPhone && (
-                                <a href={'tel:'+event.contactPhone}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
+                                <Link href={'tel:'+event.contactPhone}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
                                     <BiPhoneCall className="mr-1.5 h-6 w-6 flex-shrink-0 text-green-700" aria-hidden="true" />
                                     {event.contactPhone} 
-                                </a>
+                                </Link>
                                 )}
                             </div>
                             <div>
                                 {event.contactEmail && (
-                                <a href={'tel:'+event.contactEmail}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
+                                <Link href={'tel:'+event.contactEmail}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
                                     <GrMail className="mr-1.5 h-6 w-6 flex-shrink-0 text-green-700" aria-hidden="true" />
                                     {event.contactEmail} 
-                                </a>
+                                </Link>
                                 )}
                             </div>
                             <div>
                                 {event?.contactInstagram && (
-                                <a href={event?.contactInstagram}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
+                                <Link href={event?.contactInstagram}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
                                     <GrInstagram className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-green-700" aria-hidden="true" />
                                     {event?.contactInstagram} 
-                                </a>
+                                </Link>
                                 )}
                             </div>
                             <div>
                                 {event?.contactFacebook && (
-                                <a href={event?.contactFacebook}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
+                                <Link href={event?.contactFacebook}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
                                     <FaFacebook className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-green-700" aria-hidden="true" />
                                     {event?.contactFacebook} 
-                                </a>
+                                </Link>
                                 )}
                             </div>
                             <p className="my-4 text-gray-500">
@@ -625,7 +626,7 @@ export default function CampsiteDetail() {
                     </tbody>   
                     )}
                     {reservations !== 0 && reservations.map((request) => (
-                      <tbody className="abx acb border-t  border-gray-200">
+                      <tbody className="abx acb border-t  border-gray-200" key={request._id}>
                         <tr>
                           <td className="adh arx ati atx avv avz axq cfy">{request?.reservationName}</td>
                           <td className="adh ara arx avv axm">{request?.reservationTelephone}</td>

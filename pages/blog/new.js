@@ -125,7 +125,7 @@ export default function CampsiteAdd(){
                             <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
                                 Blog Metni
                             </label>
-                            <p className="mt-3 text-sm leading-6 text-gray-600"><a className="underline" href="https://onlinehtmleditor.dev/" target="_blank">https://onlinehtmleditor.dev/</a> adresine girip, ana başlık olmadan, alt başlıkları da "bold" yaparak yazıyı ekleyin. Font "verdana" olmalı. En son "edit html code" butonuna basıp ilgili kodu alıp alttaki alana yapıştırmalısınız.</p>
+                            <p className="mt-3 text-sm leading-6 text-gray-600"><Link className="underline" href="https://onlinehtmleditor.dev/" target="_blank">https://onlinehtmleditor.dev/</Link> adresine girip, ana başlık olmadan, alt başlıkları da &apos;bold&apos; yaparak yazıyı ekleyin. Font &apos;verdana&apos; olmalı. En son &apos;edit html code&apos; butonuna basıp ilgili kodu alıp alttaki alana yapıştırmalısınız.</p>
                             <div className="mt-2">
                                 <textarea
                                 rows={30}

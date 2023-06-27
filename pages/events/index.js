@@ -327,7 +327,7 @@ export default function CampsiteAdd(){
                       className="h-72 object-center mx-auto -mt-32"
                   />
                   <p className="mb-3 font-semibold">Favorilediğiniz ya da Kayıt Olduğunuz Etkinlik Bulunamadı </p>
-                  <a href="/" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Etkinlikleri inceleyin, favorileyin, kayıt olun!</a>
+                  <Link href="/" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Etkinlikleri inceleyin, favorileyin, kayıt olun!</Link>
               </div>
             </div>
             )}
@@ -341,7 +341,7 @@ export default function CampsiteAdd(){
             )}
             <div role="list" className="lg:grid-cols-3 max-w-none mx-0 gap-8 py-10 grid-rows-auto grid px-16 relative">
             {enrolledEvents.length !== 0 && enrolledEvents.map((event) => (
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow" key={event._id}>
                   <div className="flex flex-col p-5">
                       <h5 className="font-bold leading-7 mb-1">{event.eventTitle}</h5>
                       <div className="min-w-0 flex-auto">
@@ -361,8 +361,8 @@ export default function CampsiteAdd(){
                           <p className="mt-1 truncate text-xs leading-5 text-gray-500">{event.peopleCount}</p>
                       </div>
                       <div className="flex mt-4 space-x-3 md:mt-6">
-                          <a onClick={()=>openModal(event._id)} className="inline-flex cursor-pointer items-center px-4 py-2 text-sm font-medium text-center text-white bg-rose-700 rounded-lg hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Rezervasyonu Sil</a>
-                          <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200">Etkinliği İncele</a>
+                          <Link onClick={()=>openModal(event._id)} className="inline-flex cursor-pointer items-center px-4 py-2 text-sm font-medium text-center text-white bg-rose-700 rounded-lg hover:bg-rose-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Rezervasyonu Sil</Link>
+                          <Link href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200">Etkinliği İncele</Link>
                       </div>
                   </div>
               </div>
@@ -379,8 +379,8 @@ export default function CampsiteAdd(){
               )}
               <div role="list" className="lg:grid-cols-3 max-w-none mx-0 gap-8 grid-rows-auto grid px-16 relative">
               {favoriteEvents.length !== 0 && favoriteEvents.map((event) => (
-                <div>
-                    <a href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
+                <div key={event._id}>
+                    <Link href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
                     {event.category==="Movement" && event.images.length==0 && (
                     <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
                     )}
@@ -439,7 +439,7 @@ export default function CampsiteAdd(){
                             </h3>
                         </div>
                     </div>
-                    </a>
+                    </Link>
                     <button onClick={()=>{openDeleteFavoriteModal(event._id)}} className="mt-4 m-auto text-white bg-rose-700 hover:bg-rose-800 py-2 px-3 bg-opacity-80 rounded-xl cursor-pointer flex">
                         Favorilerden Çıkart
                     </button>

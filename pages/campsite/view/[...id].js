@@ -20,6 +20,7 @@ import { GrInstagram,GrCircleAlert } from "react-icons/gr";
 import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
 import { Popover, Transition } from '@headlessui/react'
 import { BsCreditCard } from "react-icons/bs";
+import Link from "next/link";
 let images = [
 ];
 
@@ -466,33 +467,33 @@ export default function CampsiteDetail() {
                         <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{place?.title}</h1>
                         <p className="text-gray-800 mt-1 mb-5">{place?.city} / {place?.district}</p>
                         <div className="flex mt-2 gap-1">
-                            <a className="text-gray-600 flex gap-1 hover:underline" target="_blank" href={'https://maps.google.com/?q='+place?.address}>
+                            <Link className="text-gray-600 flex gap-1 hover:underline" target="_blank" href={'https://maps.google.com/?q='+place?.address}>
                                 <FaMapMarkerAlt className="mr-1.5 h-5 w-5 flex-shrink-0 text-cc-primary" aria-hidden="true" />{
                                 place?.address}
-                            </a>
+                            </Link>
                         </div>
                         <div>
                             {place.contactTel && (
-                            <a href={'tel:'+place.contactTel}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
+                            <Link href={'tel:'+place.contactTel}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
                                 <BiPhoneCall className="mr-1.5 h-6 w-6 flex-shrink-0 text-cc-primary" aria-hidden="true" />
                                 {place.contactTel} 
-                            </a>
+                            </Link>
                             )}
                         </div>
                         <div>
                             {place?.contactInstagram && (
-                            <a href={place?.contactInstagram}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
+                            <Link href={place?.contactInstagram}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
                                 <GrInstagram className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-cc-primary" aria-hidden="true" />
                                 {place?.contactInstagram} 
-                            </a>
+                            </Link>
                             )}
                         </div>
                         <div>
                             {place?.contactFacebook && (
-                            <a href={place?.contactFacebook}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
+                            <Link href={place?.contactFacebook}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
                                 <FaFacebook className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-cc-primary" aria-hidden="true" />
                                 {place?.contactFacebook} 
-                            </a>
+                            </Link>
                             )}
                         </div>
                         <p className="my-4 text-gray-500">

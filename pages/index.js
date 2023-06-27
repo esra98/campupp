@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router'
 import Script from 'next/script'
+import Link from 'next/link';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -279,7 +280,7 @@ function CampsiteList() {
                               <div className='relative'>
                                 <div className="sticky my-3 top-0">
                                   {selectedCities?.map((place) => (
-                                    <button type="button" class="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{place}</button>
+                                    <button key={place} type="button" class="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{place}</button>
                                   ))}
                                   <div>
                                   </div>
@@ -547,22 +548,22 @@ function CampsiteList() {
               <Menu as="div" className="relative inline-block text-left">
                 <div>
                   {!isMapOpen && (
-                    <a onClick={()=>{setIsMapOpen(true)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
+                    <button onClick={()=>{setIsMapOpen(true)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
                     Haritadan Seç
                     <MapIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                  </a>
+                  </button>
                   )}
                   {isMapOpen && (
-                    <a onClick={()=>{setIsMapOpen(false)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
+                    <button onClick={()=>{setIsMapOpen(false)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
                     Haritayı Kapat
                     <MapIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                  </a>
+                  </button>
                   )}
                 </div>
 
@@ -622,7 +623,7 @@ function CampsiteList() {
                 {campsites?.length !==0 && (
                   <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
                     {campsites?.map((place) => (
-                      <a key={place._id} href={'/campsite/view/'+ place._id} className="group overflow-hidden rounded-xl">
+                      <Link key={place._id} href={'/campsite/view/'+ place._id} className="group overflow-hidden rounded-xl">
                         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                           <Slider photos={place.images}/>
                         </div>
@@ -634,7 +635,7 @@ function CampsiteList() {
                         {place.price && (
                           <p className="mt-1 text-lg text-gray-700">{place.price} ₺</p>
                         )}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}

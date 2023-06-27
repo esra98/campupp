@@ -6,6 +6,7 @@ import {
   MarkerF,
   useLoadScript,
 } from "@react-google-maps/api";
+import Link from "next/link";
 
 const markers = [
 ];
@@ -69,7 +70,7 @@ export default function Map() {
                   {activeMarker === id ? (
                     <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
                       <div>
-                        <a href={id}>{name}</a>
+                        <Link href={id}>{name}</Link>
                       </div>
                     </InfoWindowF>
                   ) : null}
