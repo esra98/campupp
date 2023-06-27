@@ -1,27 +1,114 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~react-image-gallery/styles/css/image-gallery.css";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.translate-popover{
+  --tw-translate-x: -90%;
+}
+.ReactModal__Content--after-open{
+  background: transparent !important;
+    border: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+button:focus{
+  outline: none !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.tn {
+  min-width: 100%;
+}
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+.acc > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-divide-opacity));
+}
+.abx > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.cfy {
+  padding-left: 0px;
+}
+.axq {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.avz {
+  font-weight: 500;
+}
+.avv {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.atx {
+  padding-right: 0.75rem;
+}
+.ati {
+  padding-left: 1rem;
+}
+.arx {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.adh {
+  white-space: nowrap;
+}
+.axm {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.avv {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.arx {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.ara {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.adh {
+  white-space: nowrap;
+}
+.cgf {
+  padding-right: 0px;
+}
+
+.atz {
+  padding-right: 1rem;
+}
+.ath {
+  padding-left: 0.75rem;
+}
+.arv {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+.image-gallery-image{
+  border-radius: 0.5rem;
+}
+.ani {
+  --tw-gradient-via-position: ;
+  --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-to-position: ;
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(17 24 39 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.amv {
+  --tw-gradient-from: #111827 var(--tw-gradient-from-position);
+  --tw-gradient-from-position: ;
+  --tw-gradient-to: rgb(17 24 39 / 0) var(--tw-gradient-from-position);
+  --tw-gradient-to-position: ;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.amj {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
