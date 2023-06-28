@@ -407,7 +407,7 @@ const CommentArea = ({ owner,placeId }) => {
                             </div>
                             <div>
                               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                              After saving your comment, you can add a photo to your comment by clicking the "Edit" button.
+                              After saving your comment, you can add a photo to your comment by clicking the &quot;Edit&quot; button.
                               </label>
                             </div>
                           </div>
