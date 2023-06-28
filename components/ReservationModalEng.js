@@ -26,48 +26,48 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
 
   async function saveReservation(){
     if(!reservationName){
-        toast.error('İsim alanı boş bırakılamaz.')
+        toast.error('The name field cannot be left empty. Please provide your name for the reservation request.')
         return
     }
     if(!reservationTelephone){
-        toast.error('Telefon numarası alanı boş bırakılamaz.')
+        toast.error('The phone number field cannot be left empty. Please provide a phone number to be used for your reservation request.')
         return
     }
     if(reservationTelephone){
         const checkPhone = /^(((\+|00)?(90)|0)[-| ]?)?((5\d{2})[-| ]?(\d{3})[-| ]?(\d{2})[-| ]?(\d{2}))$/.test(reservationTelephone)
         if(!checkPhone){
-            toast.error('Geçerli bir telefon numarası giriniz.')
+            toast.error('Please enter a valid phone number.')
             return;
         }
     }
     if(startDate==""){
-        toast.error('Başlangıç tarihi alanı boş bırakılamaz.')
+        toast.error('The start date field cannot be left empty. Please provide the start date for your reservation.')
         return
     }
     if(endDate==""){
-        toast.error('Bitiş tarihi alanı boş bırakılamaz.')
+        toast.error('The end date field cannot be left empty. Please provide the start date for your reservation.')
         return
     }
     if (endDate <= startDate) {
-        toast.error('Bitiş tarihi başlangıç tarihinden önce olamaz.')
+        toast.error('The end date cannot be before the start date. Please make sure the end date of your reservation is after the start date.')
         return
     }
     
     if(personCount==""){
-        toast.error('Kaç kişi için rezervasyon yaptığınız bilgisini giriniz.')
+        toast.error('Please enter the number of people for your reservation.')
         return
     }
     if (!session?.user.email) {
-        toast.error('Bu özelliği kullanmak için giriş yapmalısınız.')
+        toast.error('To use this feature, you need to log in.')
         return
     }
     const data = {campsite:placeId,startDate,endDate,reservationName,isVanPresent,personCount,reservationTelephone,bungalowRent,userMessage,campsiteName:placeName,campsiteOwner:owner}
     const res = await axios.post('/api/reservation', {...data,user:session?.user?.email});
     if(res.data=="ok"){
-        toast.success('Rezervasyon talebiniz oluşturuldu. Rezervasyonlarım sayfasından durumunu kontrol edebilirsiniz.')
+        toast.success('Your reservation request has been created. You can check its status on the "My Reservations" page.')
         onRequestClose()
     }else{
-        toast.error('İşlem tamamlanamadı, lütfen daha sonra tekrar deneyin.')
+        toast.error('The process could not be completed. Please try again later.')
     }
   }
   return (
@@ -153,14 +153,14 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                 <IoMdClose size={18} />
                             </button>
                             <div className="text-lg font-semibold">
-                              Rezervasyon Talebi Oluşturun
+                            Create a Reservation Request
                             </div>
                             </div>
                             {/*body*/}
                             <div className="relative p-6 flex-auto">
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                        Rezervasyon Talebiniz İçin Kullanılacak İsim ve Soyisim 
+                                    Please provide the name and surname to be used for your reservation request.
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -172,7 +172,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                                        Rezervasyon Talebiniz İçin Kullanılacak Telefon Numarası <span className='font-normal'>(Kamp Yerine İletilecektir)</span>
+                                    Please provide the phone number to be used for your reservation request. <span className='font-normal'>(It will be sent to the campsite)</span>
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -184,7 +184,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                                        Kaç kişi için rezervasyon yapmaktasınız?
+                                    How many people are you making the reservation for?
                                     </label>
                                     <div className="mt-2">
                                         <input
@@ -197,12 +197,12 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                                    Rezervasyon Tarihlerinizi Belirtiniz
+                                    Could you please provide the dates for your reservation?                                    
                                     </label>
                                     <div className='flex gap-6'>
                                         <div>
                                             <p className="mt-1 text-sm leading-6 text-gray-600">
-                                                Başlangıç Tarihi
+                                            Start Date
                                             </p>
                                             <div className="mt-2">
                                                 <input type="date"
@@ -212,7 +212,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                         </div>
                                         <div>
                                             <p className="mt-1 text-sm leading-6 text-gray-600">
-                                                Bitiş Tarihi
+                                            End Date
                                             </p>
                                             <div className="mt-2">
                                                 <input type="date"
@@ -224,7 +224,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                                        Rezervasyonunuz ile ilgili kamp yerine iletmek istediğiniz mesajınız varsa aşağıdaki alana ekleyebilirsiniz.
+                                    If you have any message you would like to convey to the campsite regarding your reservation, you can add it in the field below.
                                     </label>
                                     <textarea
                                     rows={3}
@@ -247,7 +247,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                                     </div>
                                                     <div className="text-sm leading-6">
                                                         <label htmlFor="comments" className="font-medium text-gray-900">
-                                                        Kamp yerinde bungalow kiralama imkanından yararlanmak ister misiniz? <span className='font-normal'>(Ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine &apos;soru sor&apos; kısmı üzerinden ulaşınız.)</span>
+                                                        Would you be interested in renting a bungalow at the campsite? <span className='font-normal'>(To obtain information about the pricing, please review the campsite page or reach out to the campsite through the &apos;Ask a Question&apos; section.)</span>
                                                         </label>
                                                     </div> 
                                                 </div>
@@ -264,7 +264,7 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                                                 </div>
                                                 <div className="text-sm leading-6">
                                                     <label htmlFor="comments" className="font-medium text-gray-900">
-                                                    Karavan ile mi konaklama yapmak istiyorsunuz? <span className='font-normal'>(Karavanlar için ücret bilgisi için kamp yeri sayfasını inceleyiniz ya da kamp yerine &apos;soru sor&apos; kısmı üzerinden ulaşınız.)</span>
+                                                    Would you like to stay in a caravan for your accommodation? <span className='font-normal'>(To obtain information about the pricing, please review the campsite page or reach out to the campsite through the &apos;Ask a Question&apos; section.)</span>
                                                     </label>
                                                 </div> 
                                             </div>
@@ -276,11 +276,11 @@ const ReservationModal = ({ owner,placeId, placeName, bungalowRentAvailable,isOp
                             <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
                                 <button onClick={onRequestClose} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                                    Kapat
+                                    Close
                                 </button>
                                 <button onClick={saveReservation} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                                    Kaydet
+                                    Save
                                 </button>
                             </div>
                         </div>

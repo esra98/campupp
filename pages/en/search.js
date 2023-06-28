@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Layout from "@/components/LayoutEng";
 import { useSession } from "next-auth/react"
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
@@ -13,7 +13,7 @@ export default function CampsiteAdd(){
   const [word, setWord] = useState([]);
   const router = useRouter();
   const currentUrl = router.asPath;
-  const searched = currentUrl.slice('/search?'.length);  
+  const searched = currentUrl.slice('/en/search?'.length);  
     useEffect(() => {
         console.log(searched)
         axios.get('/api/campsite?searchInput='+searched).then(response => {
@@ -24,10 +24,10 @@ export default function CampsiteAdd(){
     const customStyles = {
     };  
     return (
-      <Layout>
+      <Layout className="min-h-screen">
         <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
           <div className="py-8 px-16 bg-opacity-100 bg-gray-100">
-              <p><span className="font-bold">{word}</span> için arama sonuçları:</p>
+              <p>Search results for: <span className="font-bold">{word}</span></p>
               <div>
               {campsites.length == 0 && (
                   <div class="flex items-center mt-48 md:mt-36">

@@ -11,24 +11,48 @@ export default async function handle(req, res) {
     if(req.query?.id) {
         res.json(await Blog.findOne({_id:req.query.id}));
     }
-    else if(req.query?.recent){
-      res.json(await Blog.find({}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
+    else if(req.query?.recent)
+    {
+      if(req.query?.langEng){
+        res.json(await Blog.find({language:"eng"}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
+      }else{
+        res.json(await Blog.find({}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
+      }
     }
     else{
-      const { page = 1, limit = 6 } = req.query;
+      if(req.query?.langEng){
+        const { page = 1, limit = 6 } = req.query;
 
-      try {
-        const total = await Blog.countDocuments();
-        const blogs = await Blog.find()
-          .sort({ createdAt: -1 })
-          .limit(parseInt(limit))
-          .skip((parseInt(page) - 1) * parseInt(limit))
-          .exec();
+        try {
+          const total = await Blog.countDocuments();
+          const blogs = await Blog.find({language:"eng"})
+            .sort({ createdAt: -1 })
+            .limit(parseInt(limit))
+            .skip((parseInt(page) - 1) * parseInt(limit))
+            .exec();
 
-        res.status(200).json({ blogs, totalPages: Math.ceil(total / limit) });
-      } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+          res.status(200).json({ blogs, totalPages: Math.ceil(total / limit) });
+        } catch (error) {
+          res.status(500).json({ error: 'Internal server error' });
+        }
       }
+      else{
+        const { page = 1, limit = 6 } = req.query;
+
+        try {
+          const total = await Blog.countDocuments();
+          const blogs = await Blog.find()
+            .sort({ createdAt: -1 })
+            .limit(parseInt(limit))
+            .skip((parseInt(page) - 1) * parseInt(limit))
+            .exec();
+
+          res.status(200).json({ blogs, totalPages: Math.ceil(total / limit) });
+        } catch (error) {
+          res.status(500).json({ error: 'Internal server error' });
+        }
+      }
+      
     }
   }  
 

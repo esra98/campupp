@@ -1,5 +1,5 @@
 import CampsiteForm from "@/components/CampsiteForm";
-import Layout from "@/components/Layout";
+import Layout from "@/components/LayoutEng";
 import { useSession } from "next-auth/react"
 import {useEffect, useState} from "react";
 import axios from "axios";
@@ -48,7 +48,7 @@ export default function CampsiteAdd(){
     if(!session){
       return(
           <>
-              Bu özelliği kullanabilmek için giriş yapmalısınız.
+          You need to log in to use this feature.
           </>
       )
   }
@@ -144,7 +144,7 @@ export default function CampsiteAdd(){
                         </div>
                         {/*body*/}
                         <div className="relative p-6 flex-auto">
-                          Bu kamp yerini favorilerden silmek istediğinize emin misiniz?
+                        Are you sure you want to remove this campground from your favorites?
                         </div>
                         {/*footer*/}
                         <div className="flex flex-col gap-2 p-6">
@@ -160,7 +160,7 @@ export default function CampsiteAdd(){
                             <button
                               onClick={removeFavorites}
                               className="bg-rose-900 w-full p-2 border  text-white rounded-2xl mt-5 hover:bg-transparent hover:text-rose-900 hover:border hover:border-rose-900">
-                              Favorilerden Çıkart
+                              Remove
                             </button>
                           </div>
                           
@@ -188,13 +188,13 @@ export default function CampsiteAdd(){
                       <p class="mb-3 font-normal text-gray-700 h-8 truncate overflow-hidden">{person.description}</p>
                       <div className="block">
                         <button onClick={() => openModal(person._id)} class="inline-flex gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
-                            Favorilerimden Çıkart
+                            Remove
                             <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                         </button>
                       </div>
                       <div className="mt-3">
                         <Link href={"/campsite/view/"+person._id}  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
-                          Kamp Yeri Detay
+                          View Campsite
                             <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </Link>
 
@@ -213,8 +213,8 @@ export default function CampsiteAdd(){
                           alt="kamp rezervasyon"
                           className="h-72 object-center mx-auto -mt-32"
                       />
-                      <p className="mb-3 font-semibold">Favorilediğiniz Kamp Yeri Bulunamadı </p>
-                      <Link href="/"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</Link>
+                      <p className="mb-3 font-semibold">No campsite has been added to favorites </p>
+                      <Link href="/en"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Explore Campsites and Start Favoriting!</Link>
                   </div>
                 </div>
               )}

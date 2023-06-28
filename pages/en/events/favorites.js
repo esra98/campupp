@@ -8,28 +8,27 @@ import Modal from 'react-modal';
 import { IoMdClose } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { AiOutlineDelete} from "react-icons/ai";
 
 export default function CampsiteAdd(){
   const {data:session} = useSession();  
     const [campsites, setCampsites] = useState([]);
-    
+    const [events, setEvents] = useState([]);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [remove, setRemove] = useState("");
     
     useEffect(() => {
       if (session) {
-        axios.get('/api/favorites?user='+session.user.email).then(response => {
-          setCampsites(response.data);
+        axios.get('/api/favorite-event?user='+session.user.email).then(response => {
+            setEvents(response.data);
         });
       }
         
     }, [session]);
     const customStyles = {
     };  
-    function openModal(campsite_id) {
+    function openModal(event_id) {
       setIsOpen(true);
-      setRemove(campsite_id)
+      setRemove(event_id)
     }
     function afterOpenModal() {
       // references are now sync'd and can be accessed.
@@ -39,19 +38,20 @@ export default function CampsiteAdd(){
     function closeModal() {
       setIsOpen(false);
     }
+    
     async function removeFavorites() {
       await axios.delete('/api/favorites?user='+session?.user?.email+'&'+'campsite='+remove);
       toast.success('Kamp yeri favorilerden çıkartıldı')
       setCampsites(campsites.filter(item => item._id !== remove))
       closeModal()
-    }
+    }   
     if(!session){
       return(
           <>
               Bu özelliği kullanabilmek için giriş yapmalısınız.
           </>
       )
-  }
+    }
     return (
       <>
       <Layout>
@@ -171,54 +171,57 @@ export default function CampsiteAdd(){
                 </div>
               </>
           </Modal>
-          <div className="py-8 bg-opacity-100 bg-gray-100 px-16">
-          
-            <div role="list" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 divide-y divide-gray-100">
-              {campsites.length !== 0 && campsites.map((person) => (
-                
-                
-              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5" key={person._id}>
-                  <Link href="#">
-                      <img class="rounded-t-lg object-cover h-64 w-full" src={person.images[0] ? person.images[0] :"https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png" } alt="" />
-                  </Link>
-                  <div class="p-5">
-                      <Link href="#">
-                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{person.title}</h5>
-                      </Link>
-                      <p class="mb-3 font-normal text-gray-700 h-8 truncate overflow-hidden">{person.description}</p>
-                      <div className="block">
-                        <button onClick={() => openModal(person._id)} class="inline-flex gap-2 items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
-                            Favorilerimden Çıkart
-                            <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
+          <div className="p-10">
+            <div className="grid max-w-md gap-10 row-gap-8 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-2 xl:max-w-screen-lg sm:mx-auto">
+              {events?.length>0 && events.map(event => (
+                  <li key={event._id} className="flex justify-between gap-x-6 py-5 border rounded-lg p-10 mt-5">
+                    <div className="flex flex-col transition duration-300">
+                      <div className="relative w-full h-48">
+                        {event.images[0] && (
+                          <img
+                          src={event.images[0]}
+                          className="object-cover w-full h-full rounded-t"
+                          alt="Plan"
+                        />
+                        )}
+                        
+                      </div>
+                      <div className="flex flex-col justify-between flex-grow">
+                        <div>
+                          <div className="text-lg font-semibold">{event.title}</div>
+                          <p className="text-sm text-gray-900">
+                              {event.description.length > 100 ? event.description.substring(0, 100) + "...": event.description }
+                          </p>
+                          {event.price>0 && (
+                            <div className="mt-1 mb-4 mr-1 font-bold">
+                            {event.price} ₺
+                          </div>
+                          )}
+                          {event.price==0 && (
+                            <div className="mt-1 mb-4 mr-1 font-bold">
+                            Ücretsiz
+                          </div>
+                          )}
+                          
+                        </div>
+                        <button
+                          href={"/campsite/"+event?.campsite}
+                          className="bg-green-900 w-24 p-2 border  text-white rounded-2xl mt-3 hover:bg-transparent hover:text-green-900 hover:border hover:border-green-900">
+                          İnceleyin
                         </button>
                       </div>
-                      <div className="mt-3">
-                        <Link href={"/campsite/view/"+person._id}  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
-                          Kamp Yeri Detay
-                            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </Link>
-
-                      </div>
-                  </div>
-              </div>
-              ))}
-              
-            </div>
-            <div>
-            {campsites.length == 0 && (
-                <div class=" h-screen flex items-center">
-                  <div class="text-center w-full">
-                      <img
-                          src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
-                          alt="kamp rezervasyon"
-                          className="h-72 object-center mx-auto -mt-32"
-                      />
-                      <p className="mb-3 font-semibold">Favorilediğiniz Kamp Yeri Bulunamadı </p>
-                      <Link href="/"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</Link>
+                    </div>
+                  </li>
+                  ))} 
+              {events.length == 0 && (
+                <div className="flex items-center justify-center h-screen -mt-20">
+                  <div className="bg-gray-100 p-8 rounded-lg shadow-md">
+                    <h1 className="text-2xl font-bold mb-4">Favorileriniz boş</h1>
+                    <p className="text-gray-700">Kamp yerlerini gezip beğendiğiniz etkinliklerini favorilemeye başlayın!</p>
                   </div>
                 </div>
               )}
-            </div>    
+            </div>
           </div>
       </Layout>
       </>

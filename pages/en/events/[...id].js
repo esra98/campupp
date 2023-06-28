@@ -1,5 +1,5 @@
 import { useSession} from "next-auth/react"
-import Layout from '@/components/Layout'
+import Layout from '@/components/LayoutEng'
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useRouter} from "next/router";
@@ -69,50 +69,50 @@ export default function CampsiteDetail() {
   async function FavoriteEvent() {
     const user= session?.user?.email
     if(user==null){
-      toast.error('Bu özelliği kullanabilmek için öncelikle sitemize üye olmalısın. ')
+      toast.error('To use this feature, you need to first sign up on our website.')
     }
     if(user && id){
       const res = await axios.put('/api/events', {user: user,favoritedEvent:id,favoriteEvent:true})
       if(res.data == "ok"){
-        toast.success('Etkinlik favorilendi, etkinliklerim sayfasından favorilerinizi inceleyebilirsiniz.')
+        toast.success('The event has been favorited. You can review your favorites on the "My Events" page.')
       }
     }
   }
   async function enrollEvent(){
     const user= session?.user?.email
     if(user==null){
-      toast.error('Bu özelliği kullanabilmek için öncelikle sitemize üye olmalısın. ')
+      toast.error('To use this feature, you need to first sign up on our website.')
       return;
     }
     if(enrollName==""){
-      toast.error('İsim kısmını boş bırakamazsınız.')
+      toast.error('You cannot leave the name field blank.')
       return;
     }
     if(enrollPhone==""){
-      toast.error('Telefon numarası kısmını boş bırakamazsınız.')
+      toast.error('You cannot leave the phone number field blank..')
       return;
     }
     if(enrollPhone){
       const checkPhone = /^(((\+|00)?(90)|0)[-| ]?)?((5\d{2})[-| ]?(\d{3})[-| ]?(\d{2})[-| ]?(\d{2}))$/.test(enrollPhone)
       if(!checkPhone){
-        toast.error('Geçerli bir telefon numarası giriniz.')
+        toast.error('Please enter a valid phone number.')
         return;
       }
     }
     if(enrollEmail){
       const checkMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(enrollEmail)
       if(!checkMail){
-        toast.error('Geçerli bir mail adresi giriniz.')
+        toast.error('Please enter a valid email address.')
         return;
       }
     }
     if(consent==false){
-      toast.error('Devam etmek için iletişim onayı kutucuğunu onaylamanız gerekmektedir.')
+      toast.error('To proceed, you need to check the communication consent box.')
       return;
     }
     const res = await axios.post('/api/reservation-event', {user: user,event:id[0],eventOwner:event?.user,peopleCount:enrollPersonCount,eventTitle:event?.title,reservationName:enrollName,reservationTelephone:enrollPhone, reservationMail:enrollEmail,eventCampsite:event?.title})
     if(res.data == "ok"){
-        toast.success('Etkinlik rezervasyon talebi oluşturuldu, etkinliklerim sayfasından inceleyebilirsiniz.')
+        toast.success('The event reservation request has been created. You can review it on the "My Events" page.')
     }
   }
   function closeEnrollModal() {
@@ -341,7 +341,7 @@ export default function CampsiteDetail() {
                                 <IoMdClose size={18} />
                             </button>
                             <div className="text-lg font-semibold">
-                              Etkinliğe Kayıt Olun
+                              Register for the Event
                             </div>
                             </div>
                             {/*body*/}
@@ -349,7 +349,7 @@ export default function CampsiteDetail() {
                               <div >
                                 <div className="mt-3">
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                    İsim Soyisim *
+                                    Name Surname *
                                   </label>
                                   <div className="mt-2">
                                     <input
@@ -361,7 +361,7 @@ export default function CampsiteDetail() {
                                 </div>
                                 <div className="mt-3">
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Telefon Numarası *
+                                    Phone Number *
                                   </label>
                                   <div className="mt-2">
                                     <input
@@ -373,7 +373,7 @@ export default function CampsiteDetail() {
                                 </div>
                                 <div className="mt-3">
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Email Adresi
+                                    Email Address
                                   </label>
                                   <div className="mt-2">
                                     <input
@@ -385,7 +385,7 @@ export default function CampsiteDetail() {
                                 </div>
                                 <div>
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-3">
-                                    Kaç kişilik kayıt yapmak istiyorsunuz?
+                                   How many people would you like to register?
                                   </label>
                                   <div className="mt-2">
                                     <input
@@ -409,7 +409,7 @@ export default function CampsiteDetail() {
                                         </div>
                                         <div className="text-sm leading-6">
                                           <label htmlFor="comments" className="font-medium text-gray-900">
-                                            Verdiğim iletişim bilgileri ile etkinlik sahibi tarafından benimle iletişim kurulmasına izin veriyorum. *
+                                            I consent the event organizer to contact me using the provided contact information. *
                                           </label>
                                         </div> 
                                       </div>
@@ -422,11 +422,11 @@ export default function CampsiteDetail() {
                             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
                                 <button onClick={closeEnrollModal} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                                    Kapat
+                                    Close
                                 </button>
                                 <button onClick={enrollEvent} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                                    Kayıt Olun
+                                    Register
                                 </button>
                             </div>
                         </div>
@@ -484,21 +484,15 @@ export default function CampsiteDetail() {
                             <nav className="flex my-8 md:mt-0" aria-label="Breadcrumb">
                               <ol className="inline-flex items-center space-x-1 md:space-x-3">
                                 <li className="inline-flex items-center">
-                                  <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-black">
+                                  <Link href="/en" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-black">
                                     <svg aria-hidden="true" className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                                    Anasayfa
+                                    Home
                                   </Link>
                                 </li>
                                 <li>
                                   <div className="flex items-center">
                                     <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                    <Link href={"/campsite/view/"+event?.campsite} className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Kamp Alanı</Link>
-                                  </div>
-                                </li>
-                                <li>
-                                  <div className="flex items-center">
-                                    <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                    <Link href="/blog" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Etkinlikler</Link>
+                                    <Link href={"/en/campsite/view/"+event?.campsite} className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Campsite</Link>
                                   </div>
                                 </li>
                               </ol>
@@ -549,7 +543,7 @@ export default function CampsiteDetail() {
                             {event?.price==0 && (
                             <div className="flex gap-5">
                               <div className="px-5 py-1 shadow rounded-md w-40 mt-3 hover:shadow-lg">
-                                  <dd className="font-semibold leading-9">Ücretsiz Etkinlik</dd>
+                                  <dd className="font-semibold leading-9">Free</dd>
                               </div>
                             </div>
                             )}
@@ -557,13 +551,13 @@ export default function CampsiteDetail() {
                                 <button
                                     onClick={()=>{setIsEnrollModalOpen(true)}}
                                     className="bg-green-900 p-2 px-4 border shadow text-white rounded-xl mt-5 hover:shadow-xl">
-                                    Etkinliğe Kayıt Olun
+                                    Register 
                                 </button>
                                 <button
                                     onClick={()=>{FavoriteEvent()}}
                                     className="p-2 gap-2 px-4 border flex rounded-xl mt-5 hover:bg-transparent shadow hover:shadow-md">
                                     <svg aria-hidden="true" className="w-5 h-5 text-yellow-400 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <p className="font-semibold">Etkinliği Favorileyin</p>
+                                    <p className="font-semibold">Add Event to Favorites</p>
                                 </button>
                                 {event?.contactPhone && (
                                 <a

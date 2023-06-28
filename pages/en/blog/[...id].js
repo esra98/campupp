@@ -1,6 +1,6 @@
 import { useSession} from "next-auth/react"
-import Layout from '@/components/Layout'
-import Banner from '@/components/Banner'
+import Layout from '@/components/LayoutEng'
+import Banner from '@/components/BannerEng'
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useRouter} from "next/router";
@@ -22,7 +22,7 @@ export default function BlogPost() {
         axios.get('/api/blog?id='+id).then(response => {
             setBlog(response.data);
           });
-        axios.get('/api/blog?recent=true').then(response => {
+        axios.get('/api/blog?recent=true&langEng=true').then(response => {
             setRecentBlogs(response.data);
         });  
     }
@@ -69,7 +69,7 @@ export default function BlogPost() {
                     <li className="inline-flex items-center">
                       <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-black">
                         <svg aria-hidden="true" className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
-                        Anasayfa
+                        Home
                       </Link>
                     </li>
                     <li>
@@ -92,7 +92,7 @@ export default function BlogPost() {
               <div className="md:w-full lg:w-1/3">
                 <div className="p-0 lg:p-10 lg:pt-0">
                   <h4 className="font-bold leading-5 mb-4 mt-10 text-green-800 lg:mt-0">
-                    Diğer Blog Yazıları
+                    Recent Blog Posts
                   </h4>
                   {recentBlogs?.length>0 && recentBlogs.map(recentBlog=>(
                     <Link href={"/blog/"+recentBlog._id} key={recentBlog._id}>
@@ -101,7 +101,7 @@ export default function BlogPost() {
                         <div>
                           <h5 className="leading-tight font-bold text-base mb-2">{recentBlog.title}</h5>
                           <Link href="#" className="inline-flex items-center font-medium text-primary-600 hover:underline">
-                            Yazının Tamamını Okuyun
+                            Read More
                             <svg className="ml-2 w-4 h-4 mt-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                           </Link>
                         </div>

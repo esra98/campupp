@@ -30,14 +30,14 @@ export default function Example() {
       </div>
       <div className="items-center gap-x-4 gap-y-2">
         <p className="leading-7 text-lg text-gray-900 mb-8 text-center">
-          <strong className="">Kamp yapma fikri sizi heyecanlandırdı mı? ⛺😍</strong>
+          <strong className="">Does the idea of camping excite you? ⛺😍</strong>
         </p>
         <div className='text-center'>
         <Link
-          href="/"
+          href="/en"
           className="flex-none rounded-full text-center bg-cc-primary px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
-          Kamp Alanlarını İnceleyin <span aria-hidden="true">&rarr;</span>
+          Explore Campgrounds <span aria-hidden="true">&rarr;</span>
         </Link>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { FunnelIcon, MinusIcon, PlusIcon, MapIcon} from '@heroicons/react/20/solid'
 import Head from 'next/head';
-import Layout from '@/components/Layout';
+import Layout from '@/components/LayoutEng';
 import Slider from '@/components/Slider';
 import Map from '@/components/Map';
 import { ToastContainer, toast } from 'react-toastify';
@@ -186,10 +186,10 @@ function CampsiteList() {
   const handleSearchBar = (event) => {
     event.preventDefault();
     if(searchInput?.length<3){
-      toast.error("Lütfen en az üç karakter girip arama yapınız.")
+      toast.error("Please enter at least three characters and try again.")
       return
     }
-    router.push(`/search?${searchInput}`);
+    router.push(`en/search?${searchInput}`);
   };
 
   const handleKeyDown = (event) => {
@@ -202,16 +202,16 @@ function CampsiteList() {
       <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
 
       <Head>
-        <title>CampUpp - Kamp Yerlerini İnceleyin, Favorileyin, Rezervasyon Yapın</title>
+        <title>CampUpp - Explore Campgrounds, Add to Favorites, Make Reservations</title>
         <meta
           name="description"
-          content="Kamp yerlerini inceleyin, favorileyin. Deniz, göl, orman, duş, sıcak su, wifi gibi özelliklerini inceleyin."
+          content="Explore campgrounds, Add to Favorites. Check features such as sea, lake, forest, shower, hot water, wifi."
           key="desc"
         />
         <meta property="og:title" content="CampUpp - Kamp Yerlerini İnceleyin, Favorileyin, Rezervasyon Yapın" />
         <meta
           property="og:description"
-          content="Kamp yerlerini inceleyin, favorileyin. Deniz, göl, orman, duş, sıcak su, wifi gibi özelliklerini inceleyin."
+          content="CampUpp - Explore Campgrounds, Add to Favorites, Make Reservations"
         />
         <meta
           property="og:image"
@@ -247,7 +247,7 @@ function CampsiteList() {
               >
                 <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
                   <div className="flex items-center justify-between px-4">
-                    <h2 className="text-lg font-medium text-gray-900">Filtreler</h2>
+                    <h2 className="text-lg font-medium text-gray-900">Filters</h2>
                     <button
                       type="button"
                       className="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400"
@@ -261,12 +261,12 @@ function CampsiteList() {
                   {/* Filters */}
                   <form className="mt-4 border-t border-gray-200">
                     <h3 className="sr-only">Categories</h3>
-                      <Disclosure as="div" className="border-t border-gray-200 px-4 py-6">
+                      <Disclosure as="div" key="1" className="border-t border-gray-200 px-4 py-6">
                         {({ open }) => (
                           <>
                             <h3 className="-mx-2 -my-3 flow-root">
                               <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">Şehir Seçin</span>
+                                <span className="font-medium text-gray-900">Select City</span>
                                 <span className="ml-6 flex items-center">
                                   {open ? (
                                     <MinusIcon className="h-5 w-5" aria-hidden="true" />
@@ -286,7 +286,7 @@ function CampsiteList() {
                                   </div>
                                   <input
                                     type="text"
-                                    placeholder="Şehir arayın"
+                                    placeholder="Select City"
                                     onChange={(e) => handleSearch(e.target.value)}
                                     className="border border-gray-300 rounded px-4 py-2"
                                   />
@@ -316,12 +316,12 @@ function CampsiteList() {
                           </>
                         )}
                       </Disclosure>
-                      <Disclosure as="div" className="border-t border-gray-200 px-4 py-6">
+                      <Disclosure as="div" key="2" className="border-t border-gray-200 px-4 py-6">
                         {({ open }) => (
                           <>
                             <h3 className="-mx-2 -my-3 flow-root">
                               <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-gray-400 hover:text-gray-500">
-                                <span className="font-medium text-gray-900">Tesis Özellikleri</span>
+                                <span className="font-medium text-gray-900">Facility Features</span>
                                 <span className="ml-6 flex items-center">
                                   {open ? (
                                     <MinusIcon className="h-5 w-5" aria-hidden="true" />
@@ -336,6 +336,62 @@ function CampsiteList() {
                                   <div className="flex items-center">
                                     <input
                                         type="checkbox"
+                                        checked={filterOptions.isEnglishSpoken}
+                                        onChange={event =>
+                                          handleFilterOptionChange('isEnglishSpoken', event.target.checked)
+                                        }
+                                    />
+                                    <label
+                                      className="ml-3 min-w-0 flex-1 text-gray-500"
+                                    >
+                                      English Spoken Host
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        checked={filterOptions.isGermanSpokenn}
+                                        onChange={event =>
+                                          handleFilterOptionChange('isGermanSpoken', event.target.checked)
+                                        }
+                                    />
+                                    <label
+                                      className="ml-3 min-w-0 flex-1 text-gray-500"
+                                    >
+                                      German Spoken Host
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        checked={filterOptions.isRussianSpoken}
+                                        onChange={event =>
+                                          handleFilterOptionChange('isRussianSpoken', event.target.checked)
+                                        }
+                                    />
+                                    <label
+                                      className="ml-3 min-w-0 flex-1 text-gray-500"
+                                    >
+                                      Russian Spoken Host
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        checked={filterOptions.isSpanishSpoken}
+                                        onChange={event =>
+                                          handleFilterOptionChange('isSpanishSpoken', event.target.checked)
+                                        }
+                                    />
+                                    <label
+                                      className="ml-3 min-w-0 flex-1 text-gray-500"
+                                    >
+                                      Spanish Spoken Host
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <input
+                                        type="checkbox"
                                         checked={filterOptions.isNearSea}
                                         onChange={event =>
                                           handleFilterOptionChange('isNearSea', event.target.checked)
@@ -344,7 +400,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Denize Yakın
+                                      Close to the Sea
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -358,7 +414,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Göle Yakın
+                                      Close to the Lake
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -372,7 +428,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Ormana Yakın
+                                      Close to the Forest
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -386,7 +442,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Bungalow Kiralanabilir
+                                       Rentable Bungalows
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -400,7 +456,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Karavana Uygun
+                                      Suitable for Caravans
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -414,7 +470,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Uzaktan Çalışmaya Uygun
+                                      Suitable for Remote Work
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -428,7 +484,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Alkolsüz
+                                      Alcohol-Free
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -442,7 +498,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Toplu Taşıma ile Ulaşım
+                                      Accessible by Public Transportation
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -470,7 +526,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Duş Alanı
+                                      Shower Area
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -484,7 +540,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Sıcak Su
+                                      Shower Area with Hot Water
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -498,7 +554,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Mutfak
+                                     Kitchen Facilities
                                     </label>
                                   </div>
                                   <div className="flex items-center">
@@ -512,7 +568,7 @@ function CampsiteList() {
                                     <label
                                       className="ml-3 min-w-0 flex-1 text-gray-500"
                                     >
-                                      Kredi Kartı ile Ödeme
+                                      Payment Accepted via Credit Card
                                     </label>
                                   </div>
                               </div>
@@ -537,11 +593,11 @@ function CampsiteList() {
                     </div>
                     <input type="text"
                       id="searchInput"  
-                      placeholder='isim, adres, açıklama arayın'
+                      placeholder='Search by name, address or description'
                       value={searchInput}
                       onChange={(e) => setSearchInput(e.target.value)}  onKeyDown={handleKeyDown} class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " required
                     />
-                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-cc-primary hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 cursor-pointer">Ara</button>
+                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-cc-primary hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 cursor-pointer">Search</button>
                 </div>
             </form>
             <div className="flex items-center">
@@ -549,7 +605,7 @@ function CampsiteList() {
                 <div>
                   {!isMapOpen && (
                     <button onClick={()=>{setIsMapOpen(true)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Haritadan Seç
+                    Select from the Map
                     <MapIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -558,7 +614,7 @@ function CampsiteList() {
                   )}
                   {isMapOpen && (
                     <button onClick={()=>{setIsMapOpen(false)}} className="cursor-pointer group inline-flex justify-start text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Haritayı Kapat
+                    Close the Map
                     <MapIcon
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -604,7 +660,7 @@ function CampsiteList() {
                 className="flex -m-2 ml-4 p-2 text-gray-400 hover:text-gray-600 sm:ml-6 border border-gray-200 rounded shadow"
                 onClick={() => setMobileFiltersOpen(true)}
               >
-                <span className='mr-3 text-gray-700 font-medium'>Filtrele</span>
+                <span className='mr-3 text-gray-700 font-medium'>Filter</span>
                 <FunnelIcon className="h-5 w-5 mt-1" aria-hidden="true" />
               </button>
             </div>
@@ -621,9 +677,9 @@ function CampsiteList() {
               <div className="bg-white">
                 {campsites?.length !==0 && (
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
                     {campsites?.map((place) => (
-                      <Link key={place._id} href={'/campsite/view/'+ place._id} className="group overflow-hidden rounded-xl">
+                      <Link key={place._id} href={'/en/campsite/view/'+ place._id} className="group overflow-hidden rounded-xl">
                         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                           <Slider photos={place.images}/>
                         </div>
@@ -648,8 +704,8 @@ function CampsiteList() {
                               alt="kamp rezervasyon"
                               className="h-72 object-center mx-auto -mt-32"
                           />
-                          <p className="mb-3 font-semibold">Aradığınız Kriterlere Göre Bir Kamp Alanı Bulunamadı </p>
-                          <p class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg ">Filtrelerden bazılarını temizleyerek yeniden deneyebilirsiniz</p>
+                          <p className="mb-3 font-semibold">No Campsite Found According to Your Criteria</p>
+                          <p class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg ">You can try again by clearing some of the filters.</p>
                       </div>
                     </div>
                     )}
@@ -659,7 +715,7 @@ function CampsiteList() {
             </div>
             <div className='text-center'>
               <button className='py-2.5 px-5 mr-2 mb-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-cc-primary focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700' onClick={handleLoadMore} disabled={isLoading}>
-                {isLoading ? 'Yükleniyor...' : 'Devamını Yükle'}
+                {isLoading ? 'Loading...' : 'Load More'}
               </button>
             </div>
           </section>                      
