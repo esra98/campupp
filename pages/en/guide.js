@@ -35,8 +35,8 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                    If you're unhappy with your purchase for any reason, email us
-                                    within 90 days and we'll refund you in full, no questions asked.
+                                    If youre unhappy with your purchase for any reason, email us
+                                    within 90 days and well refund you in full, no questions asked.
                                 </Disclosure.Panel>
                                 </>
                             )}
