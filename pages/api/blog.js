@@ -16,7 +16,7 @@ export default async function handle(req, res) {
       if(req.query?.langEng){
         res.json(await Blog.find({language:"eng"}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
       }else{
-        res.json(await Blog.find({}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
+        res.json(await Blog.find({language:"tr"}, 'title shortDesc category image').sort({ createdAt: -1 }).limit(5));
       }
     }
     else{
@@ -41,7 +41,7 @@ export default async function handle(req, res) {
 
         try {
           const total = await Blog.countDocuments();
-          const blogs = await Blog.find()
+          const blogs = await Blog.find({language:"tr"})
             .sort({ createdAt: -1 })
             .limit(parseInt(limit))
             .skip((parseInt(page) - 1) * parseInt(limit))

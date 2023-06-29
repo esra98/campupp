@@ -4,7 +4,7 @@ import axios from "axios";
 import { FaCampground } from "react-icons/fa";
 import Link from "next/link";
 import { useSession } from "next-auth/react"
-import Banner from '@/components/Banner'
+import Banner from '@/components/BannerEng'
 import Script from 'next/script'
 
 export default function Blogs() {
@@ -65,12 +65,9 @@ export default function Blogs() {
                 </div> 
                 <div class="grid gap-8 lg:grid-cols-3">
                 {blogs?.length>0 && blogs.map(blog => (
-                    <Link key={blog._id} href={'/blog/'+ blog._id} class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
-                        
-                    <Link href="#">
+                    <Link key={blog._id} href={'/en/blog/'+ blog._id} class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
                         <img class="rounded-lg h-auto mb-5" src={blog.image[0]!==""?blog.image[0]:"https://media.timeout.com/images/105658195/750/422/image.jpg"} alt="office laptop working"/>
-                    </Link>
-                    <div class="flex justify-between items-center mb-5 text-gray-500">
+                        <div class="flex justify-between items-center mb-5 text-gray-500">
                             <span class="bg-cc-primary hover:opacity-95 hover:shadow-lg text-white text-xs font-medium inline-flex items-center px-3 py-1.5 rounded shadow-md">
                                 <FaCampground className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                 {blog.category=="Kamp İpuçları ve Püf Noktaları" && (
@@ -101,7 +98,7 @@ export default function Blogs() {
                     </h2>
                     <p class="_9OKVeTXzfSwD_NYO6_G XdjN1uxS_rsa3F90ox40 K1PPCJwslha8GUIvV_Cr eCx_6PNzncAD5yo7Qcic">{blog.shortDesc}</p>
                     <Link href={'/en/blog/'+ blog._id} class="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
-                      Yazının Tamamını Okuyun
+                      Read More
                       <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </Link>
                     {session?.user?.email=="nazifeesra98@gmail.com"  && (
@@ -122,10 +119,10 @@ export default function Blogs() {
             </div>
             <div className="w-full text-center pb-16">
                 <button onClick={handlePreviousPage} disabled={currentPage === 1} class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                Önceki
+                Previos
                 </button>
                 <button onClick={handleNextPage} disabled={currentPage === totalPages} class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
-                Sonraki
+                Next
                 </button>
             </div>
         </section>

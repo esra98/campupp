@@ -49,10 +49,10 @@ export default function Header() {
           <Link href="/en/blog" className="hidden md:block text-sm font-semibold leading-6 text-gray-900">
             Blog
           </Link>
-          <Link href="/" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
-            How to Use?
+          <Link href="/en/guide" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
+            FAQ
           </Link>
-          <Link href="/contact" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
+          <Link href="/en/contact" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             Contact Us
           </Link>
         </div>
@@ -259,7 +259,7 @@ export default function Header() {
                 {!session && (
                   <a
                       onClick={() => signIn('google')}
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="block md:hidden font-semibold leading-6 text-gray-900 pt-5"
                     >
                       Log In
                     </a>
@@ -267,10 +267,10 @@ export default function Header() {
                 <Link href="/en/blog" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
                   Blog
                 </Link>
-                <Link href="/" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
-                    How to Use?
+                <Link href="/en/guide" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
+                    FAQ
                 </Link>
-                <Link href="/contact" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
+                <Link href="/en/contact" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
                   Contact Us
                 </Link>
               </div>

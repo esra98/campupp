@@ -95,12 +95,12 @@ export default function BlogPost() {
                     Recent Blog Posts
                   </h4>
                   {recentBlogs?.length>0 && recentBlogs.map(recentBlog=>(
-                    <Link href={"/blog/"+recentBlog._id} key={recentBlog._id}>
+                    <Link href={"/en/blog/"+recentBlog._id} key={recentBlog._id}>
                       <div className="items-center flex mb-5">
                         <img className="rounded-md max-w-full w-24 h-24 mr-4" src={recentBlog.image[0]!==""?recentBlog.image[0]:"https://media.timeout.com/images/105658195/750/422/image.jpg"}/>
                         <div>
                           <h5 className="leading-tight font-bold text-base mb-2">{recentBlog.title}</h5>
-                          <Link href="#" className="inline-flex items-center font-medium text-primary-600 hover:underline">
+                          <Link href={"/en/blog/"+recentBlog._id} className="inline-flex items-center font-medium text-primary-600 hover:underline">
                             Read More
                             <svg className="ml-2 w-4 h-4 mt-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                           </Link>

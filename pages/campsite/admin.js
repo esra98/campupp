@@ -238,7 +238,7 @@ async function sendApproval(requestId){
                                 Kamp Yerinizi Ekleyin
                             </Link>
                             <Link href="#" className="text-sm font-semibold leading-6 text-white">
-                                Nasıl kullanılır? <span aria-hidden="true">→</span>
+                                SSS <span aria-hidden="true">→</span>
                             </Link>
                             </div>
                         </div>
