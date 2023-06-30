@@ -182,7 +182,7 @@ export default function Reservations(){
                                     className="h-72 object-center mx-auto -mt-32"
                                 />
                                 <p className="mb-3 font-semibold">Oluşturduğunuz rezervasyon talebi bulunamadı</p>
-                                <Link  href="/"class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</Link>
+                                <Link type="button" href="/"class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</Link>
                             </div>
                         </div>
                     )}
