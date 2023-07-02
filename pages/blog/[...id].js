@@ -36,7 +36,7 @@ export default function BlogPost() {
     );
     wrappedContent = htmlContent.replace(
       /<a\b(.*?)>/g,
-      '<a$1 class="underline font-bold" target="_blank">'
+      '<a$1 className="underline font-bold" target="_blank">'
     );
     return wrappedContent
   };
@@ -74,7 +74,7 @@ export default function BlogPost() {
                     </li>
                     <li>
                       <div className="flex items-center">
-                        <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                        <svg aria-hidden="true" className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
                         <Link href="/blog" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black">Blog</Link>
                       </div>
                     </li>
@@ -102,7 +102,7 @@ export default function BlogPost() {
                           <h5 className="leading-tight font-bold text-base mb-2">{recentBlog.title}</h5>
                           <Link href={"/blog/"+recentBlog._id} className="inline-flex items-center font-medium text-primary-600 hover:underline">
                             Yazının Tamamını Okuyun
-                            <svg className="ml-2 w-4 h-4 mt-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg className="ml-2 w-4 h-4 mt-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                           </Link>
                         </div>
                       </div>

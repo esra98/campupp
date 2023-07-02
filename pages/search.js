@@ -30,15 +30,15 @@ export default function CampsiteAdd(){
               <p><span className="font-bold">{word}</span> için arama sonuçları:</p>
               <div>
               {campsites.length == 0 && (
-                  <div class="flex items-center mt-48 md:mt-36">
-                    <div class="text-center w-full">
+                  <div className="flex items-center mt-48 md:mt-36">
+                    <div className="text-center w-full">
                         <img
                             src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
                             alt="kamp rezervasyon"
                             className="h-72 object-center mx-auto -mt-32"
                         />
                         <p className="mb-3 font-semibold">Arama Kriterlerinize Uygun Kamp Yeri Bulunamadı </p>
-                        <Link href="/"  type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</Link>
+                        <Link href="/"  type="button" className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Favorilemeye Başlayın!</Link>
                     </div>
                   </div>
                 )}
@@ -46,21 +46,21 @@ export default function CampsiteAdd(){
               <div role="list" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 divide-y divide-gray-100">
                 {campsites.length !== 0 && campsites.map((person) => (
                   
-                  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5" key={person._id}>
+                  <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-5" key={person._id}>
                     <Link href="#">
-                        <img class="rounded-t-lg object-cover h-64 w-full" src={person.images[0] ? person.images[0] :"https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png" } alt="" />
+                        <img className="rounded-t-lg object-cover h-64 w-full" src={person.images[0] ? person.images[0] :"https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png" } alt="" />
                     </Link>
-                    <div class="p-5">
+                    <div className="p-5">
                         <Link href="#">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{person.title}</h5>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{person.title}</h5>
                         </Link>
-                        <p class="mb-3 font-normal text-gray-700 h-8 truncate overflow-hidden">{person.description}</p>
+                        <p className="mb-3 font-normal text-gray-700 h-8 truncate overflow-hidden">{person.description}</p>
                         <div className="block">
                         </div>
                         <div className="mt-3">
-                          <Link href={"/campsite/view/"+person._id}  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
+                          <Link href={"/campsite/view/"+person._id}  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-cc-primary rounded-lg hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 cursor-pointer">
                             Kamp Yeri Detay
-                              <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                              <svg aria-hidden="true" className="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                           </Link>
 
                         </div>

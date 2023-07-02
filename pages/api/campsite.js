@@ -12,6 +12,37 @@ export default async function handle(req, res) {
     else if(req.query?.map) {
       res.json(await Campsite.find().select('title _id mapLatitute mapLangtitute'))
     }
+    else if(req.query?.counts) {
+      try {
+        const cityOccurrences = await Campsite.aggregate([
+          {
+            $group: {
+              _id: '$city',
+              count: { $sum: 1 },
+            },
+          },
+          {
+            $project: {
+              _id: 0,
+              city: '$_id',
+              count: 1,
+            },
+          },
+        ]);
+    
+        const result = {};
+    
+        cityOccurrences.forEach((city) => {
+          result[city.city] = city.count;
+        });
+    
+        res.json(result);
+      } catch (error) {
+        console.error('Error getting city occurrences:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
+  
+    }
     else if(req.query?.id) {
       res.json(await Campsite.findOne({_id:req.query.id}));
     }

@@ -172,15 +172,15 @@ export default function Reservations(){
                     )}
                     
                     {reservationRequests.length == 0 && (
-                        <div class=" h-screen flex items-center">
-                            <div class="text-center w-full">
+                        <div className=" h-screen flex items-center">
+                            <div className="text-center w-full">
                                 <img
                                     src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
                                     alt="kamp rezervasyon"
                                     className="h-72 object-center mx-auto -mt-32"
                                 />
                                 <p className="mb-3 font-semibold">No reservation requests were found.</p>
-                                <Link type="button" href="/"class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</Link>
+                                <Link type="button" href="/"className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Kamp Yerlerini İnceleyin ve Rezervasyon Talebi Oluşturmaya Başlayın</Link>
                             </div>
                         </div>
                     )}
@@ -247,12 +247,12 @@ export default function Reservations(){
                                 </div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 rounded-md">
-                                <button onClick={()=>{setDeletedReservationId(reservationRequest?._id);openDeleteEventModal()}} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 cursor-pointer">
+                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 rounded-md">
+                                <button onClick={()=>{setDeletedReservationId(reservationRequest?._id);openDeleteEventModal()}} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100 cursor-pointer">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     Delete
                                 </button>
-                                <Link href={'/en/campsite/view/' + reservationRequest?.campsite} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100">
+                                <Link href={'/en/campsite/view/' + reservationRequest?.campsite} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100">
                                     <AiOutlineDoubleRight className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     View Campsite
                                 </Link>

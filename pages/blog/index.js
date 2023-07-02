@@ -63,37 +63,37 @@ export default function Blogs() {
                     <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-semibold text-gray-800">Blog Yazıları</h2>
                     <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Doğaya Adım Atın: Kamp Maceralarınız ve Açık Hava Kaçışlarınız İçin Kapsamlı Rehber</p>
                 </div> 
-                <div class="grid gap-8 lg:grid-cols-3">
+                <div className="grid gap-8 lg:grid-cols-3">
                 {blogs?.length>0 && blogs.map(blog => (
-                    <Link key={blog._id} href={'/blog/'+ blog._id} class="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
+                    <Link key={blog._id} href={'/blog/'+ blog._id} className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
                         
                     <Link href="#">
-                        <img class="rounded-lg h-auto mb-5" src={blog.image[0]!==""?blog.image[0]:"https://media.timeout.com/images/105658195/750/422/image.jpg"} alt="office laptop working"/>
+                        <img className="rounded-lg h-auto mb-5" src={blog.image[0]!==""?blog.image[0]:"https://media.timeout.com/images/105658195/750/422/image.jpg"} alt="office laptop working"/>
                     </Link>
-                    <div class="flex justify-between items-center mb-5 text-gray-500">
-                            <span class="bg-cc-primary hover:opacity-95 hover:shadow-lg text-white text-xs font-medium inline-flex items-center px-3 py-1.5 rounded shadow-md">
+                    <div className="flex justify-between items-center mb-5 text-gray-500">
+                            <span className="bg-cc-primary hover:opacity-95 hover:shadow-lg text-white text-xs font-medium inline-flex items-center px-3 py-1.5 rounded shadow-md">
                                 <FaCampground className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                 {blog.category}
                             </span>
                         </div>
-                    <h2 class="mb-2 text-2xl tracking-tight text-gray-900">
+                    <h2 className="mb-2 text-2xl tracking-tight text-gray-900">
                         <Link href={'/blog/'+ blog._id}>{blog.title}</Link>
                     </h2>
-                    <p class="_9OKVeTXzfSwD_NYO6_G XdjN1uxS_rsa3F90ox40 K1PPCJwslha8GUIvV_Cr eCx_6PNzncAD5yo7Qcic">{blog.shortDesc}</p>
-                    <Link href={'/blog/'+ blog._id} class="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
+                    <p className="_9OKVeTXzfSwD_NYO6_G XdjN1uxS_rsa3F90ox40 K1PPCJwslha8GUIvV_Cr eCx_6PNzncAD5yo7Qcic">{blog.shortDesc}</p>
+                    <Link href={'/blog/'+ blog._id} className="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
                       Yazının Tamamını Okuyun
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </Link>
                     {session?.user?.email=="nazifeesra98@gmail.com"  && (
-                    <button onClick={()=>deleteBlog(blog._id)} class="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
+                    <button onClick={()=>deleteBlog(blog._id)} className="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
                       Yazıyı Sil
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </button>
                     )}
                     {session?.user?.email=="ceren.basoglu.16@gmail.com"  && (
-                    <button onClick={()=>deleteBlog(blog._id)} class="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
+                    <button onClick={()=>deleteBlog(blog._id)} className="inline-flex items-center font-medium text-primary-600 mt-5 hover:underline">
                       Yazıyı Sil
-                      <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                      <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </button>
                     )}
                 </Link>                 
@@ -101,10 +101,10 @@ export default function Blogs() {
                 </div>  
             </div>
             <div className="w-full text-center pb-16">
-                <button onClick={handlePreviousPage} disabled={currentPage === 1} class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <button onClick={handlePreviousPage} disabled={currentPage === 1} className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
                 Önceki
                 </button>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages} class="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
+                <button onClick={handleNextPage} disabled={currentPage === totalPages} className="inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700">
                 Sonraki
                 </button>
             </div>

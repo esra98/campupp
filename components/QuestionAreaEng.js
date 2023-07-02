@@ -326,12 +326,12 @@ const QuestionArea = ({ placeId, owner }) => {
                             </div>
                         </div>
                         {/*footer*/}
-                        <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
-                                  <button onClick={closeReplyModal} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                        <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
+                                  <button onClick={closeReplyModal} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                       Close
                                   </button>
-                                  <button onClick={saveReplyQuestion} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                                  <button onClick={saveReplyQuestion} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                       Save Answer
                                   </button>
@@ -465,12 +465,12 @@ const QuestionArea = ({ placeId, owner }) => {
                           </div>
                         </div>
                         {/*footer*/}
-                        <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
-                              <button onClick={closeQuestionModal} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                        <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
+                              <button onClick={closeQuestionModal} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                 <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                   Close
                               </button>
-                              <button onClick={()=>{saveQuestion();setModalQuestionIsOpen(false);}} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                              <button onClick={()=>{saveQuestion();setModalQuestionIsOpen(false);}} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                 <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                   Save Question
                               </button>
@@ -483,7 +483,7 @@ const QuestionArea = ({ placeId, owner }) => {
           </Modal>
           <ToastContainer />
           <div>
-            <div class="flex justify-start md:justify-end">
+            <div className="flex justify-start md:justify-end">
               {questions?.length<1 && (
               <div>
                 <div className="gap-2 px-4 py-2 flex rounded-xl hover:bg-transparent">

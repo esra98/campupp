@@ -319,15 +319,15 @@ export default function CampsiteAdd(){
           </Modal>
           <div className="-mt-16">
             {enrolledEvents.length == 0 && favoriteEvents.length == 0 && (
-            <div class=" h-screen flex items-center">
-              <div class="text-center w-full">
+            <div className=" h-screen flex items-center">
+              <div className="text-center w-full">
                   <img
                       src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
                       alt="kamp rezervasyon"
                       className="h-72 object-center mx-auto -mt-32"
                   />
                   <p className="mb-3 font-semibold">There is no event that you have favorited or registered. </p>
-                  <Link href="/en" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Browse Events, Favorite, and Register!</Link>
+                  <Link href="/en" type="button" className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Browse Events, Favorite, and Register!</Link>
               </div>
             </div>
             )}
@@ -382,40 +382,40 @@ export default function CampsiteAdd(){
                 <div key={event._id}>
                     <Link href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
                     {event.category==="Movement" && event.images.length==0 && (
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
                     )}
                     {event.category==="Hiking"  && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-hiking.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-hiking.jpg" />
                     )}
                     {event.category==="Spor Festivali"  && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-sport-fest.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-sport-fest.jpg" />
                     )}
                     {event.category==="Müzik Festivali"  && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-music-fest.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-music-fest.jpg" />
                     )}
                     {event.category==="Outdoor" && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-outdoor.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-outdoor.jpg" />
                     )}
                     {event.category==="Yoga" && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-yoga.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-yoga.jpg" />
                     )}
                     {event.category==="Masaj & Wellness" && event.images.length==0 &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-message.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-message.jpg" />
                     )}
                     {event.category==="Çocuklara Özel" && event.images.length==0  &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-kid.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-kid.jpg" />
                     )}
                     {event.category==="Meditation & İnziva" && event.images.length==0  &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-meditation.jpg" />
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-meditation.jpg" />
                     )}
                     {event.category==="Fitness" && event.images.length==0  &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-fitness.jpg"/>
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-fitness.jpg"/>
                     )}
                     {event.images.length!==0  &&(
-                    <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src={event.images[0]}/>
+                    <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src={event.images[0]}/>
                     )}
-                    <div class="absolute inset-0 z-[-10] amj amv ani"></div>
-                    <div class="absolute inset-0 z-[-10] rounded-lg bbo bbs bcj"></div>
+                    <div className="absolute inset-0 z-[-10] amj amv ani"></div>
+                    <div className="absolute inset-0 z-[-10] rounded-lg bbo bbs bcj"></div>
                     <div className='text-white leading-6 font-medium text-base m-0 mt-3 absolute w-full'>
                     </div>
                     <button className="absolute top-3 right-5 text-white bg-yellow-300 py-2 px-3 bg-opacity-80 rounded-xl cursor-pointer flex">
@@ -429,7 +429,7 @@ export default function CampsiteAdd(){
                     <div className='absolute bottom-0'>
                         <div className='flex'>
                             <MdDateRange className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-white" aria-hidden="true" />
-                            <time datetime="2020-02-12" class="text-white mb-4">{event.startDate.substring(0, 10)} / {event.endDate.substring(0, 10)}</time>
+                            <time datetime="2020-02-12" className="text-white mb-4">{event.startDate.substring(0, 10)} / {event.endDate.substring(0, 10)}</time>
                         </div>
                         <div className='mt-2'>
                             <h3 className='text-white leading-6 font-medium text-base mt-5 absolute bottom-20 w-full'>

@@ -413,12 +413,12 @@ const CommentArea = ({ owner,placeId }) => {
                           </div>
                         </div>
                         {/*footer*/}
-                        <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
-                                <button onClick={closeModal} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                        <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
+                                <button onClick={closeModal} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     Kapat
                                 </button>
-                                <button onClick={saveComment} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                                <button onClick={saveComment} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                     <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                     Yorumunuzu Kaydedin
                                 </button>
@@ -589,12 +589,12 @@ const CommentArea = ({ owner,placeId }) => {
                             </div>
                             </div>
                             {/*footer*/}
-                            <div class="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
-                              <button onClick={closeEditModal} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-200 rounded-md ">
+                              <button onClick={closeEditModal} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                 <AiOutlineDelete className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                   Kapat
                               </button>
-                              <button onClick={saveEditedComment} class="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
+                              <button onClick={saveEditedComment} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-300">
                                 <AiOutlineSend className="mr-1.5 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                                   Yorumunuzu Kaydedin
                               </button>
@@ -607,7 +607,7 @@ const CommentArea = ({ owner,placeId }) => {
     </Modal>
     <ToastContainer />
     <div className="">
-      <div class="block md:flex justify-between">
+      <div className="block md:flex justify-between">
         {comments?.length<1 && (
         <div>
           <div className="gap-2 px-4 py-2 flex rounded-xl hover:bg-transparent">
@@ -617,10 +617,10 @@ const CommentArea = ({ owner,placeId }) => {
         )}
         {comments?.length>0 && (
         <div>
-          <div class="mb-5 mt-5">
-            <p class=" text-black text-sm font-semibold inline-flex items-center p-1.5 underline"> {avarageRating} <svg aria-hidden="true" className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></p>
-            <span class="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
-            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">{comments?.length} yorum</p>
+          <div className="mb-5 mt-5">
+            <p className=" text-black text-sm font-semibold inline-flex items-center p-1.5 underline"> {avarageRating} <svg aria-hidden="true" className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg></p>
+            <span className="w-1 h-1 mx-2 bg-gray-900 rounded-full dark:bg-gray-500"></span>
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{comments?.length} yorum</p>
           </div>
         </div>
         )}

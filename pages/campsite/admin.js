@@ -114,7 +114,7 @@ async function sendApproval(requestId){
                             Kamp Yerime Gelen Rezervasyon Talepleri
                             </h2>
                             <div className="overflow-scroll">
-                                <table class="tn abx acc">
+                                <table className="tn abx acc">
                                     
                                 </table>    
                                         {reservationRequestsIncoming.length !== 0 && reservationRequestsIncoming.map((request) => (
@@ -122,26 +122,26 @@ async function sendApproval(requestId){
                                         <table className='border border-t-2'>
                                             <thead>
                                                 <tr>
-                                                    <th scope="col" class="arv ati atx avf avv awb axq cfy">İsim</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Telefon</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Email</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Rezervasyon Tarihleri</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Kişi Sayısı</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Bungalow Kiralama</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Karavanla Kalma</th>
-                                                    <th scope="col" class="ara arv avf avv awb axq">Rezervasyon Talebini Oluşturduğu Tarih</th>
+                                                    <th scope="col" className="arv ati atx avf avv awb axq cfy">İsim</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Telefon</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Email</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Rezervasyon Tarihleri</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Kişi Sayısı</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Bungalow Kiralama</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Karavanla Kalma</th>
+                                                    <th scope="col" className="ara arv avf avv awb axq">Rezervasyon Talebini Oluşturduğu Tarih</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="abx acb border-t  border-gray-200">
+                                            <tbody className="abx acb border-t  border-gray-200">
                                                 <tr>
-                                                    <td class="adh arx ati atx avv avz axq cfy">{request?.reservationName}</td>
-                                                    <td class="adh ara arx avv axm">{request?.reservationTelephone}</td>
-                                                    <td class="adh ara arx avv axm">{request?.user}</td>
-                                                    <td class="adh ara arx avv axm">{request?.startDate.substring(0, 10)} / {request?.endDate.substring(0, 10)}</td>
-                                                    <td class="adh ara arx avv axm">{request?.personCount}</td>
-                                                    <td class="adh ara arx avv axm">{request?.bungalowRent ? 'Evet' : 'Hayır'}</td>
-                                                    <td class="adh ara arx avv axm">{request?.isVanPresent ? 'Evet' : 'Hayır'}</td>
-                                                    <td class="adh ara arx avv axm">{request?.createdAt.substring(0, 10)}</td>
+                                                    <td className="adh arx ati atx avv avz axq cfy">{request?.reservationName}</td>
+                                                    <td className="adh ara arx avv axm">{request?.reservationTelephone}</td>
+                                                    <td className="adh ara arx avv axm">{request?.user}</td>
+                                                    <td className="adh ara arx avv axm">{request?.startDate.substring(0, 10)} / {request?.endDate.substring(0, 10)}</td>
+                                                    <td className="adh ara arx avv axm">{request?.personCount}</td>
+                                                    <td className="adh ara arx avv axm">{request?.bungalowRent ? 'Evet' : 'Hayır'}</td>
+                                                    <td className="adh ara arx avv axm">{request?.isVanPresent ? 'Evet' : 'Hayır'}</td>
+                                                    <td className="adh ara arx avv axm">{request?.createdAt.substring(0, 10)}</td>
                                                 </tr>  
                                             </tbody>
                                         </table>

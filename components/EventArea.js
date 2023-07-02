@@ -887,7 +887,7 @@ const options = [
               </a>
               )}
               {events?.length<1 && (
-              <div class="flex items-center mb-5 mt-5">
+              <div className="flex items-center mb-5 mt-5">
                 Bu kamp yeri hanüz etkinlik eklememiş
               </div>
               )}
@@ -895,40 +895,40 @@ const options = [
                 {events?.length>0 && events.map(event => (
                   <Link key={event._id} href={'/events/'+ event._id} className='pt-80 pb-8 px-8 bg-gray-900 rounded-lg overflow-hidden justify-end flex flex-col isolate relative shadow-lg'>
                     {event.category==="Movement" && event.images.length==0 && (
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-movement.jpg" />
                     )}
                     {event.category==="Hiking"  && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-hiking.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-hiking.jpg" />
                     )}
                     {event.category==="Spor Festivali"  && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-sport-fest.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-sport-fest.jpg" />
                     )}
                     {event.category==="Müzik Festivali"  && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-music-fest.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-music-fest.jpg" />
                     )}
                     {event.category==="Outdoor" && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-outdoor.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-outdoor.jpg" />
                     )}
                     {event.category==="Yoga" && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-yoga.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-yoga.jpg" />
                     )}
                     {event.category==="Masaj & Wellness" && event.images.length==0 &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-message.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-message.jpg" />
                     )}
                     {event.category==="Çocuklara Özel" && event.images.length==0  &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-kid.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-kid.jpg" />
                     )}
                     {event.category==="Meditation & İnziva" && event.images.length==0  &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-meditation.jpg" />
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-meditation.jpg" />
                     )}
                     {event.category==="Fitness" && event.images.length==0  &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-fitness.jpg"/>
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src="https://campupp.s3.eu-north-1.amazonaws.com/events-fitness.jpg"/>
                     )}
                     {event.images.length!==0  &&(
-                      <img class="object-cover inset-0 z-[-10] h-full w-full absolute" src={event.images[0]}/>
+                      <img className="object-cover inset-0 z-[-10] h-full w-full absolute" src={event.images[0]}/>
                     )}
-                    <div class="absolute inset-0 z-[-10] amj amv ani"></div>
-                    <div class="absolute inset-0 z-[-10] rounded-lg bbo bbs bcj"></div>
+                    <div className="absolute inset-0 z-[-10] amj amv ani"></div>
+                    <div className="absolute inset-0 z-[-10] rounded-lg bbo bbs bcj"></div>
                     <div className='text-white leading-6 font-medium text-base m-0 mt-3 absolute w-full'>
                     </div>
                     <button className="absolute top-3 right-5 text-white bg-yellow-300 py-2 px-3 bg-opacity-80 rounded-xl cursor-pointer flex">
@@ -942,7 +942,7 @@ const options = [
                     <div className='absolute bottom-0'>
                       <div className='flex'>
                         <MdDateRange className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-white" aria-hidden="true" />
-                        <time datetime="2020-02-12" class="text-white mb-4">{event.startDate.substring(0, 10)} / {event.endDate.substring(0, 10)}</time>
+                        <time datetime="2020-02-12" className="text-white mb-4">{event.startDate.substring(0, 10)} / {event.endDate.substring(0, 10)}</time>
                       </div>
                       <div className='mt-2'>
                         <h3 className='text-white leading-6 font-medium text-base mt-5 absolute bottom-20 w-full'>

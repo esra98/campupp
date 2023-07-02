@@ -280,7 +280,7 @@ function CampsiteList() {
                               <div className='relative'>
                                 <div className="sticky my-3 top-0">
                                   {selectedCities?.map((place) => (
-                                    <button key={place} type="button" class="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{place}</button>
+                                    <button key={place} type="button" className="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{place}</button>
                                   ))}
                                   <div>
                                   </div>
@@ -586,18 +586,18 @@ function CampsiteList() {
         <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="block md:flex items-baseline justify-between border-b border-gray-200 py-6">
             <form className='md:w-96 mb-5 md:mb-0'  onSubmit={handleSearchBar}>   
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div className="relative">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
                     <input type="text"
                       id="searchInput"  
                       placeholder='Search by name, address or description'
                       value={searchInput}
-                      onChange={(e) => setSearchInput(e.target.value)}  onKeyDown={handleKeyDown} class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " required
+                      onChange={(e) => setSearchInput(e.target.value)}  onKeyDown={handleKeyDown} className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " required
                     />
-                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-cc-primary hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 cursor-pointer">Search</button>
+                    <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-cc-primary hover:bg-opacity-90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 cursor-pointer">Search</button>
                 </div>
             </form>
             <div className="flex items-center">
@@ -697,15 +697,15 @@ function CampsiteList() {
                 )}
                 <div>  
                     {campsites?.length==0 && (
-                      <div class="pt-32 flex items-center mt-5">
-                      <div class="text-center w-full">
+                      <div className="pt-32 flex items-center mt-5">
+                      <div className="text-center w-full">
                           <img
                               src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
                               alt="kamp rezervasyon"
                               className="h-72 object-center mx-auto -mt-32"
                           />
                           <p className="mb-3 font-semibold">No Campsite Found According to Your Criteria</p>
-                          <p class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg ">You can try again by clearing some of the filters.</p>
+                          <p className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg ">You can try again by clearing some of the filters.</p>
                       </div>
                     </div>
                     )}

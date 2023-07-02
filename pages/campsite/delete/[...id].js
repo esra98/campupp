@@ -31,8 +31,8 @@ export default function DeleteProductPage() {
   return (
     <Layout>
       <ToastContainer />
-      <div class=" h-screen flex items-center">
-        <div class="text-center w-full">
+      <div className=" h-screen flex items-center">
+        <div className="text-center w-full">
           <p className="mb-3 font-semibold">Kamp yerinizi ({productInfo?.title}) silmek istediğinize emin misiniz? </p>
           <p>Silme işlemini geri alamazsınız.</p>
           <div>
