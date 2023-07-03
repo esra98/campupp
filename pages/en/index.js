@@ -161,6 +161,12 @@ function CampsiteList() {
     fetchCampsites(currentPage);
   }, [currentPage, selectedCities, filterOptions]);
 
+  useEffect(() => { 
+    axios.get('/api/campsite?counts='+true).then(response => {
+      setCityCounts(response.data);
+    });
+  }, [])
+
   const handleLoadMore = () => {
     setCurrentPage(prevPage => prevPage + 1);
   };
@@ -172,6 +178,12 @@ function CampsiteList() {
     setSelectedCities(updatedCities);
     setCurrentPage(1);
     setCampsites([]);
+  };
+
+  const handleCityDeselect = (place) => {
+    setSelectedCities((prevSelectedCities) =>
+      prevSelectedCities.filter((city) => city !== place)
+    );
   };
 
   const handleFilterOptionChange = (option, value) => {
@@ -280,7 +292,10 @@ function CampsiteList() {
                               <div className='relative'>
                                 <div className="sticky my-3 top-0">
                                   {selectedCities?.map((place) => (
-                                    <button key={place} type="button" className="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">{place}</button>
+                                    <button key={place} type="button" className="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                                      {place}
+                                      <XMarkIcon className="h-4 w-4 mt-0.5" aria-hidden="true" onClick={() => handleCityDeselect(place)} />
+                                    </button>
                                   ))}
                                   <div>
                                   </div>
@@ -304,7 +319,7 @@ function CampsiteList() {
                                           onChange={() => handleCitySelect(cityFilter)}
                                         />
                                         <label className="ml-3 min-w-0 flex-1 text-gray-500">
-                                          {cityFilter}
+                                          {cityFilter}<span className='font-bold'>{cityCounts[cityFilter]}</span>
                                         </label>
                                       </div>
                                     ))}
