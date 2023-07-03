@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router'
 import Script from 'next/script'
 import Link from 'next/link';
+import axios from "axios";
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -111,6 +112,7 @@ function CampsiteList() {
   const [searchInput, setSearchInput] = useState("");
 
   const [campsites, setCampsites] = useState([]);
+  const [cityCounts, setCityCounts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCities, setSelectedCities] = useState([]);
@@ -292,7 +294,7 @@ function CampsiteList() {
                               <div className='relative'>
                                 <div className="sticky my-3 top-0">
                                   {selectedCities?.map((place) => (
-                                    <button key={place} type="button" className="text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+                                    <button key={place} type="button" className="flex gap-2 text-white bg-cc-primary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
                                       {place}
                                       <XMarkIcon className="h-4 w-4 mt-0.5" aria-hidden="true" onClick={() => handleCityDeselect(place)} />
                                     </button>
@@ -319,7 +321,7 @@ function CampsiteList() {
                                           onChange={() => handleCitySelect(cityFilter)}
                                         />
                                         <label className="ml-3 min-w-0 flex-1 text-gray-500">
-                                          {cityFilter}<span className='font-bold'>{cityCounts[cityFilter]}</span>
+                                          {cityFilter}<span className='font-bold ml-1'>{cityCounts[cityFilter]}</span>
                                         </label>
                                       </div>
                                     ))}
