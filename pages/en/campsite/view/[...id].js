@@ -580,7 +580,7 @@ export default function CampsiteDetail() {
                                             <span className="text-base">Breakfast Included in the Price</span>
                                         </li>
                                     )}
-                                    {!place.isFriendlyAlcohol && (
+                                    {place.isFriendlyAlcohol && (
                                         <li className="text-gray-900">
                                             <span className="text-base">Not Alcohol Friendly</span>
                                         </li>

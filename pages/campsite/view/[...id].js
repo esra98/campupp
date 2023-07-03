@@ -581,7 +581,7 @@ export default function CampsiteDetail() {
                                             <span className="text-base">Fiyata kahvaltı dahil</span>
                                         </li>
                                     )}
-                                    {!place.isFriendlyAlcohol && (
+                                    {place.isFriendlyAlcohol && (
                                         <li className="text-gray-900">
                                             <span className="text-base">Alkolsüz</span>
                                         </li>
