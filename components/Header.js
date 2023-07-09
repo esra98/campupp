@@ -19,7 +19,6 @@ const profile = [
   { name: 'Favorilerim', description: 'Favori kamp alanlarınızın listesi', href: '/favorites', icon: StarIcon },
   { name: 'Rezervasyon Taleplerim', description: 'Rezervasyon taleplerinizin listesi', href: '/reservations', icon: SquaresPlusIcon },
   { name: 'Etkinliklerim', description: 'Favorilediğiniz ve kayıt olduğunuz etkinlikler', href: '/events', icon: UsersIcon },
-  { name: 'Komunite', description: 'Kamp arkadaşları, malzemeleri, tavsiyeleri ve daha fazlası', href: '/coomunity', icon: GlobeAltIcon },
   { name: 'Yönetici Sayfası', description: 'Kamp alanınızı yönetin', href: '/campsite/admin', icon:PencilSquareIcon },
 ]
 const callsToAction = [
