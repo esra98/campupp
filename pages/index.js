@@ -230,6 +230,16 @@ function CampsiteList() {
           property="og:image"
           content="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
         />
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-J1DMDZKZEC" />
+        <script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+  
+            gtag('config', 'G-J1DMDZKZEC');
+          `}
+        </script>
       </Head>
       <ToastContainer />
       <div>
