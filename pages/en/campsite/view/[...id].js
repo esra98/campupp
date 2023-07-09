@@ -18,14 +18,15 @@ import { BiPhoneCall } from "react-icons/bi";
 import { GrInstagram,GrCircleAlert } from "react-icons/gr";
 import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";
+import Head from 'next/head'
+
 import Link from "next/link";
 let images = [
 ];
 
-export default function CampsiteDetail() {
+export default function CampsiteDetail({title, description}) {
   const {data:session} = useSession();
   const [place, setPlace] = useState([])
-  const [showAllPhotos, setShowAllPhotos] = useState(false)
   const [placeImages, setPlaceImages] = useState(false)
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalQuestionIsOpen, setModalQuestionIsOpen] = useState(false);
@@ -166,6 +167,10 @@ export default function CampsiteDetail() {
     };
   return(
     <Layout>
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+        </Head>
         <ReservationModal placeId={place?._id} owner={place?.user} placeName={place?.title} bungalowRentAvailable={place?.isReservationModuleBungalowRentingPossible} isOpen={isReservationModalOpen} onRequestClose={closeReservationModal}/>
         <Modal
               isOpen={modalQuestionIsOpen}
@@ -447,7 +452,7 @@ export default function CampsiteDetail() {
                             <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{place?.titleEnglish}</h1>
                         )}
                         {place?.title =="" && (
-                            <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{place?.title}</h1>
+                            <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{title}</h1>
                         )}
                         <p className="text-gray-800 mt-1 mb-5">{place?.city} / {place?.district}</p>
                         <div className="flex mt-2 gap-1">
@@ -489,7 +494,7 @@ export default function CampsiteDetail() {
                         <>
                         <p><strong>Host has not added English description yet.</strong></p>
                         <p className="my-4 text-gray-500">
-                            {place?.description}
+                            {description}
                         </p>
                         </>
                         )}
@@ -1000,4 +1005,10 @@ export default function CampsiteDetail() {
         </div>
     </Layout>
 )
+}
+
+export async function getServerSideProps(context) {
+    const { id } = context.query;
+    const response = await axios.get('https://www.campupp.com/api/campsite?id=' + id);
+    return { props: { title:response.data.title, description:response.data.description} };
 }

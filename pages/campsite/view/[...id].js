@@ -5,7 +5,6 @@ import axios from "axios";
 import {useRouter} from "next/router";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {WifiIcon,NoSymbolIcon,HeartIcon,SunIcon,BoltIcon,CheckCircleIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import { Disclosure } from '@headlessui/react'
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid'
 import Modal from 'react-modal';
@@ -16,18 +15,18 @@ import EventsArea from '@/components/EventArea';
 import ReservationModal from "@/components/ReservationModal";
 import ImageGallery from 'react-image-gallery';
 import { BiPhoneCall } from "react-icons/bi";
-import { GrInstagram,GrCircleAlert } from "react-icons/gr";
+import { GrInstagram} from "react-icons/gr";
 import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
-import { Popover, Transition } from '@headlessui/react'
 import { BsCreditCard } from "react-icons/bs";
+import Head from 'next/head'
 import Link from "next/link";
+
 let images = [
 ];
 
-export default function CampsiteDetail() {
+export default function CampsiteDetail({title, description}) {
   const {data:session} = useSession();
   const [place, setPlace] = useState([])
-  const [showAllPhotos, setShowAllPhotos] = useState(false)
   const [placeImages, setPlaceImages] = useState(false)
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalQuestionIsOpen, setModalQuestionIsOpen] = useState(false);
@@ -37,7 +36,6 @@ export default function CampsiteDetail() {
   const [commentImages, setCommentImages]= useState([])
   const [commentPoint, setCommentPoint]= useState(3)
   const [questionText, setQuestionText]= useState("")
-  const [replyText, setreplyText]= useState("")
   const [isReservationModalOpen,setIsReservationModalOpen]= useState(false)
   const [questionAnonymous,setQuestionAnonymous]= useState(false)
   const router = useRouter();
@@ -187,6 +185,10 @@ export default function CampsiteDetail() {
     };
   return(
     <Layout>
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+        </Head>
         <ReservationModal placeId={place?._id} owner={place?.user} placeName={place?.title} bungalowRentAvailable={place?.isReservationModuleBungalowRentingPossible} isOpen={isReservationModalOpen} onRequestClose={closeReservationModal}/>
         <Modal
               isOpen={modalQuestionIsOpen}
@@ -464,7 +466,7 @@ export default function CampsiteDetail() {
             <div className="p-6">
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="lg:col-span-2 ">
-                        <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{place?.title}</h1>
+                        <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{title}</h1>
                         <p className="text-gray-800 mt-1 mb-5">{place?.city} / {place?.district}</p>
                         <div className="flex mt-2 gap-1">
                             <Link className="text-gray-600 flex gap-1 hover:underline" target="_blank" href={'https://maps.google.com/?q='+place?.address}>
@@ -497,7 +499,7 @@ export default function CampsiteDetail() {
                             )}
                         </div>
                         <p className="my-4 text-gray-500">
-                            {place?.description}
+                            {description}
                         </p>
                         <div className="block md:flex gap-5">
                             {place.price && (
@@ -927,7 +929,7 @@ export default function CampsiteDetail() {
                                     </Disclosure.Panel>
                                 </>
                                 )}
-                            </Disclosure> 
+                </Disclosure> 
                 <Disclosure as="div" key="1" className="border-t border-gray-200 px-0 py-6">
                 {({ open }) => (
                 <>
@@ -1001,4 +1003,10 @@ export default function CampsiteDetail() {
         </div>
     </Layout>
 )
+}
+
+export async function getServerSideProps(context) {
+    const { id } = context.query;
+    const response = await axios.get('https://www.campupp.com/api/campsite?id=' + id);
+    return { props: { title:response.data.title, description:response.data.description} };
 }

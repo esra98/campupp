@@ -1,4 +1,3 @@
-import { useSession} from "next-auth/react"
 import Layout from '@/components/Layout'
 import Banner from '@/components/Banner'
 import {useEffect, useState} from "react";
@@ -6,12 +5,11 @@ import axios from "axios";
 import {useRouter} from "next/router";
 import Link from "next/link";
 import Script from 'next/script'
+import Head from 'next/head'
 
-export default function BlogPost() {
-  const {data:session} = useSession();
-  const [blog, setBlog] = useState([])
+
+export default function BlogPost({title, content, image, shortDesc }) {
   const [recentBlogs, setRecentBlogs] = useState([])
-  const [wrappedHtml, setWrappedHtml] = useState("")
   const router = useRouter();
   const {id} = router.query;
   useEffect(()=>{
@@ -19,40 +17,20 @@ export default function BlogPost() {
         return;
     }
     else{
-        axios.get('/api/blog?id='+id).then(response => {
-            setBlog(response.data);
-          });
         axios.get('/api/blog?recent=true').then(response => {
             setRecentBlogs(response.data);
         });  
     }
-  }, [id])
-
-  const wrapStrongTags = (htmlContent) => {
-    console.log(htmlContent)
-    let wrappedContent = htmlContent.replace(
-      /<strong\b[^>]*>(.*?)<\/strong>/g,
-      '<div className="my-5"><strong>$1</strong></div>'
-    );
-    wrappedContent = htmlContent.replace(
-      /<a\b(.*?)>/g,
-      '<a$1 className="underline font-bold" target="_blank">'
-    );
-    return wrappedContent
-  };
-
-  useEffect(()=>{
-    if(blog.content){
-        const wrapped = wrapStrongTags(blog.content);
-        setWrappedHtml(wrapped)
-    }
-  }, [blog])
-  
+  }, [id])  
   return(
     <Layout>
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={shortDesc} />
+        </Head>
         <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
         <div className="sharethis-sticky-share-buttons"></div>
-        {blog && (
+        {title && (
         <>
         <main className="pb-24 bg-opacity-100 bg-white">
           <header className="bg-blend-darken bg-no-repeat bg-center bg-cover bg-[url(https://campupp.s3.eu-north-1.amazonaws.com/blog-bg.jpg)] w-full relative h-96">
@@ -80,14 +58,14 @@ export default function BlogPost() {
                     </li>
                   </ol>
                 </nav>
-                <h1 className="text-2xl leading-9 font-semibold text-green-800">{blog.title}</h1>
+                <h1 className="text-2xl leading-9 font-semibold text-green-800">{title}</h1>
 
-                {blog?.image?.length>0 && (
+                {image?.length>0 && (
                   <figure>
-                     <img className="rounded-lg mb-5" src={blog.image[0] } alt=""/>
+                     <img className="rounded-lg mb-5" src={image[0] } alt=""/>
                   </figure>
                 )}
-                <div dangerouslySetInnerHTML={{ __html: wrappedHtml }} />
+                <div dangerouslySetInnerHTML={{ __html: content }} />
               </div>
               <div className="md:w-full lg:w-1/3">
                 <div className="p-0 lg:p-10 lg:pt-0">
@@ -119,10 +97,24 @@ export default function BlogPost() {
         </main>        
         </>
         )}
-        {!blog && (
+        {!title && (
             <div>Araığınız yazı bulunamadı, kaldırılmış olabilir</div>
         )}
         <Banner />
     </Layout>
 )
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const response = await axios.get('https://www.campupp.com/api/blog?id=' + id);
+  let wrappedContent = response.data.content.replace(
+    /<strong\b[^>]*>(.*?)<\/strong>/g,
+    '<div className="my-5"><strong>$1</strong></div>'
+  );
+  wrappedContent = wrappedContent.replace(
+    /<a\b(.*?)>/g,
+    '<a$1 className="underline font-bold" target="_blank">'
+  );
+  return { props: { title:response.data.title,content:wrappedContent, image: response.data.image, shortDesc:response.data.shortDesc } };
 }
