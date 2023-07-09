@@ -52,7 +52,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                Türkiye’deki en güzel kamp yerleri arasından sana uygun olanı seçerek işletmenin sayfasında bulunan telefon, sosyal medya veya mail adreslerini kullanman yetkililer ile iletişime geçmen için yeterli. Ayrıca sağ altta bulunan WhatsApp butonu, işletme ile kolaylıkla iletişime geçmen için özel olarak tasarlandı.                                </Disclosure.Panel>
+                                Türkiye&apos;deki en güzel kamp yerleri arasından sana uygun olanı seçerek işletmenin sayfasında bulunan telefon, sosyal medya veya mail adreslerini kullanman yetkililer ile iletişime geçmen için yeterli. Ayrıca sağ altta bulunan WhatsApp butonu, işletme ile kolaylıkla iletişime geçmen için özel olarak tasarlandı.                                </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
@@ -68,7 +68,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                Tercih etmek isteyebileceğin bir kamp yeri hakkında daha fazla bilgiye ihtiyacın varsa veya yetkililere spesifik bir soru sormak istersen kamp alanlarının iletişim bilgilerini kullanabilirsin. Ayrıca seçtiğin kamp alanının sayfasının altında “Kamp Yerine Soru Sorun” yazan ayrı bir bölüm bulunuyor. Bu bölümden işletmeye daha önce sorulan sorulara göz atabilir ve kamp alanı işletmesine istediğin konu hakkında sorabilirsin.                                </Disclosure.Panel>
+                                Tercih etmek isteyebileceğin bir kamp yeri hakkında daha fazla bilgiye ihtiyacın varsa veya yetkililere spesifik bir soru sormak istersen kamp alanlarının iletişim bilgilerini kullanabilirsin. Ayrıca seçtiğin kamp alanının sayfasının altında &quot;Kamp Yerine Soru Sorun&quot; yazan ayrı bir bölüm bulunuyor. Bu bölümden işletmeye daha önce sorulan sorulara göz atabilir ve kamp alanı işletmesine istediğin konu hakkında sorabilirsin.                                </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
@@ -84,7 +84,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                Türkiye’de kamp alanları oldukça çeşitli ve her ihtiyaca yönelik işletme bulabilmek mümkün. CampUpp içinde sana uygun olan kamp alanını bulmak istiyorsan ana sayfadan sağ üstte bulunan “Filtrele” butonuna basabilirsin. Bastığın zaman açılan kısımdan ihtiyacın olan özellikleri seçerek sana uygun sonuçları daha kolay görebilirsin. Ayrıca kamp yerlerinin sayfalarında tesislerin fotoğraflarının altında ayrıntılı bir şekilde tesislerin sahip oldukları tüm özellikler yazılı bulunuyor.                                  </Disclosure.Panel>
+                                Türkiye&apos;de kamp alanları oldukça çeşitli ve her ihtiyaca yönelik işletme bulabilmek mümkün. CampUpp içinde sana uygun olan kamp alanını bulmak istiyorsan ana sayfadan sağ üstte bulunan &quot;Filtrele&quot; butonuna basabilirsin. Bastığın zaman açılan kısımdan ihtiyacın olan özellikleri seçerek sana uygun sonuçları daha kolay görebilirsin. Ayrıca kamp yerlerinin sayfalarında tesislerin fotoğraflarının altında ayrıntılı bir şekilde tesislerin sahip oldukları tüm özellikler yazılı bulunuyor.                                  </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
@@ -92,7 +92,7 @@ export default function Guides() {
                             {({ open }) => (
                                 <>
                                 <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                                    <span>Seçtiğim kamp alanına nasıl rezervasyon yaptırabilirim??</span>
+                                    <span>Seçtiğim kamp alanına nasıl rezervasyon yaptırabilirim?</span>
                                     <ChevronUpIcon
                                     className={`${
                                         open ? 'rotate-180 transform' : ''
@@ -117,7 +117,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                Hayır. CampUpp’tan seçtiğin kamp alanına rezervasyon talebi oluştururken hiçbir ücret ödemiyorsun. CampUpp senden hiçbir ücret almadan rezervasyon talebini kamp yerinin işletmecilerine bildirir. Kamp yeri işletmecisi eğer rezervasyonunu kabul ederse yetkililerle iletişime geçerek ücreti nasıl ödeyeceğin hakkında soru sorabilirsin. Pek çok kamp işletmecisi kamp yeri ücretini giriş veya çıkış esnasında tahsil edecektir.                                 </Disclosure.Panel>
+                                Hayır. CampUpp&quot;tan seçtiğin kamp alanına rezervasyon talebi oluştururken hiçbir ücret ödemiyorsun. CampUpp senden hiçbir ücret almadan rezervasyon talebini kamp yerinin işletmecilerine bildirir. Kamp yeri işletmecisi eğer rezervasyonunu kabul ederse yetkililerle iletişime geçerek ücreti nasıl ödeyeceğin hakkında soru sorabilirsin. Pek çok kamp işletmecisi kamp yeri ücretini giriş veya çıkış esnasında tahsil edecektir.                                 </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
@@ -133,7 +133,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                Rezervasyon talebi oluşturduğunda bu rezervasyon yaptırdığın anlamına gelmiyor. Kamp yerine gitmek için rezervasyon talebinin kamp alanı tarafından onaylandığından emin olmalısın. Rezervasyon talebinin onaylanma durumunu sağ üst köşedeki profiline tıkladıktan sonra açılan “Rezervasyon Taleplerim” butonuna basarak taleplerin arasından görüntüleyebilirsin.  
+                                Rezervasyon talebi oluşturduğunda bu rezervasyon yaptırdığın anlamına gelmiyor. Kamp yerine gitmek için rezervasyon talebinin kamp alanı tarafından onaylandığından emin olmalısın. Rezervasyon talebinin onaylanma durumunu sağ üst köşedeki profiline tıkladıktan sonra açılan &quot;Rezervasyon Taleplerim&quot; butonuna basarak taleplerin arasından görüntüleyebilirsin.  
                                 </Disclosure.Panel>
                                 </>
                             )}
@@ -208,7 +208,7 @@ export default function Guides() {
                             {({ open }) => (
                                 <>
                                 <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-                                    <span>Karavan kampı yapacaksam rezervasyon talebi oluştururken nelere dikkat etmeliyim? </span>
+                                    <span>Karavan kampı yapacaksam rezervasyon talebi oluştururken nelere dikkat etmeliyim?</span>
                                     <ChevronUpIcon
                                     className={`${
                                         open ? 'rotate-180 transform' : ''
@@ -216,7 +216,8 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                CampUpp’tan karavan için konaklama alanlarına bakıyorsan öncelikle kamp alanı ararken “Karavana Uygun” seçeneğini işaretlemelisin. Türkiye kamp tesislerinin bir kısmı sadece çadırla bazıları ise hem çadır hem karavanla konaklamaya uygun olabiliyor. Bazı tesisler ise sadece karavan kamp yerlerine sahip olabiliyor. Bu yüzden karavan ile tatil yapacaksan seçtiğin kamp alanının karavan kabul edip etmediğinden emin olmalı ve rezervasyon talebini ondan sonra oluşturmalısın. Ayrıca rezervasyon talebi oluştururken altta bulunan “Karavan ile mi konaklama yapmak istiyorsunuz?” kısmını işaretlemeli ve tesisle iletişime geçtiğinizde tekrardan karavan ile geleceğinizi hatırlatmalısınız.                                  </Disclosure.Panel>
+                                CampUpp&apos;tan karavan için konaklama alanlarına bakıyorsan öncelikle kamp alanı ararken &quot;Karavana Uygun&quot; seçeneğini işaretlemelisin. Türkiye kamp tesislerinin bir kısmı sadece çadırla bazıları ise hem çadır hem karavanla konaklamaya uygun olabiliyor. Bazı tesisler ise sadece karavan kamp yerlerine sahip olabiliyor. Bu yüzden karavan ile tatil yapacaksan seçtiğin kamp alanının karavan kabul edip etmediğinden emin olmalı ve rezervasyon talebini ondan sonra oluşturmalısın. Ayrıca rezervasyon talebi oluştururken altta bulunan &quot;Karavan ile mi konaklama yapmak istiyorsunuz?&quot; kısmını işaretlemeli ve tesisle iletişime geçtiğinizde tekrardan karavan ile geleceğinizi hatırlatmalısınız.                                  
+                                </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
@@ -232,7 +233,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                CampUpp tarafından hiçbir şekilde ücret alınmadığını bilmeni isteriz. Ödeme kamp alanı işletmecileri ve senin aranda olacak. Kamp yeri tesislerinin sayfasına girdiğinde “Bu işletmede ödemenizi kredi kartı ile yapabilirsiniz.” yazısını görürsen bu işletmenin kredi kartı ile de ödeme kabul ettiğini gösterir. Aksi halde kamp yeri ödemelerini sadece nakit veya EFT gibi yollarla tahsil ediyor da olabilir. Ödemeler hakkında daha ayrıntılı bilgi için konaklama yapacağın kamp alanı işletmecileri ile iletişime geçmelisin.                                 </Disclosure.Panel>
+                                CampUpp tarafından hiçbir şekilde ücret alınmadığını bilmeni isteriz. Ödeme kamp alanı işletmecileri ve senin aranda olacak. Kamp yeri tesislerinin sayfasına girdiğinde &quot;Bu işletmede ödemenizi kredi kartı ile yapabilirsiniz.&quot; yazısını görürsen bu işletmenin kredi kartı ile de ödeme kabul ettiğini gösterir. Aksi halde kamp yeri ödemelerini sadece nakit veya EFT gibi yollarla tahsil ediyor da olabilir. Ödemeler hakkında daha ayrıntılı bilgi için konaklama yapacağın kamp alanı işletmecileri ile iletişime geçmelisin.                                 </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>
