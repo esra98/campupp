@@ -6,7 +6,7 @@ import { Dialog, Disclosure, Popover, Transition, Menu } from '@headlessui/react
 import {
   StarIcon,  
   Bars3Icon,
-  PencilSquareIcon,
+  GlobeAltIcon,
   UsersIcon,
   SquaresPlusIcon,
   XMarkIcon,

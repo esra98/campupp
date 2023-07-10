@@ -40,7 +40,6 @@ export default function CampsiteDetail({title, description}) {
   const [questionAnonymous,setQuestionAnonymous]= useState(false)
   const router = useRouter();
   const {id} = router.query;
-  console.log(id)
   useEffect(()=>{
     if(!id){
         return;
