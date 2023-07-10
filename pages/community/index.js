@@ -14,7 +14,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineDelete} from "react-icons/ai";
-
+import Link from "next/link";
 const categories = [
   'Kamp arkadaşı arama',
   'Kamp alanı hakkında fikir alma',
@@ -344,10 +344,10 @@ export default function Community() {
                       </div>                  
                       <div className="flex items-center mt-5">
                         <div>
-                            <a href="/community/new" className="p-2 gap-2 px-4 border flex rounded-xl  hover:bg-transparent shadow hover:shadow-md">
+                            <Link href="/community/new" className="p-2 gap-2 px-4 border flex rounded-xl  hover:bg-transparent shadow hover:shadow-md">
                             <FaComment className="mr-1.5 h-5 w-5 flex-shrink-0 mt-1 text-cc-primary" aria-hidden="true" />
                             <p className="font-semibold">Yeni Pano Oluştur</p>
-                            </a>
+                            </Link>
                         </div>
                         <button
                           type="button"
