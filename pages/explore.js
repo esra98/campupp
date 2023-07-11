@@ -165,8 +165,8 @@ export default function BlogPost() {
         <div className="bg-opacity-100 bg-[rgb(31 41 55/var(--tw-bg-opacity))] p-2 md:p-9 md:px-20 mx-auto my-[-8rem] rounded-[0.25rem] justify-between flex z-20 relative">
           <article className="w-full p-3 md:p-10 shadow text-base rounded-md leading-tight max-w-none bg-white">
           <div className='my-5'>
-            <h1 class="text-3xl mt-5 font-semibold tracking-tight text-green-800">Türkiye'yi Keşfedin!</h1>
-            <p class="mt-2 font-light text-gray-500 sm:text-xl dark:text-gray-400">Türkiye'nin çeşitli bölgelerinde bulunan antik kentlerin, açık hava müzelerinin, yürüyüş yollarınını yerlerini gösteren bir harita sunuyoruz.</p>
+            <h1 class="text-3xl mt-5 font-semibold tracking-tight text-green-800">Türkiye&apos;yi Keşfedin!</h1>
+            <p class="mt-2 font-light text-gray-500 sm:text-xl dark:text-gray-400">Türkiye&apos;nin çeşitli bölgelerinde bulunan antik kentlerin, açık hava müzelerinin, yürüyüş yollarınını yerlerini gösteren bir harita sunuyoruz.</p>
           </div>
             <div className="container">
               <div className="type-checkboxes md:flex gap-5 my-5">
