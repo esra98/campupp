@@ -17,7 +17,6 @@ import { ChevronDownIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const profile = [
   { name: 'Favorilerim', description: 'Favori kamp alanlarınızın listesi', href: '/favorites', icon: StarIcon },
-  { name: 'Komünite', description: 'Mesaj panosu oluşturun ve iletişime geçin', href: '/community', icon: GlobeAltIcon},
   { name: 'Rezervasyon Taleplerim', description: 'Rezervasyon taleplerinizin listesi', href: '/reservations', icon: SquaresPlusIcon },
   { name: 'Etkinliklerim', description: 'Favorilediğiniz ve kayıt olduğunuz etkinlikler', href: '/events', icon: UsersIcon },
   { name: 'Yönetici Sayfası', description: 'Kamp alanınızı yönetin', href: '/campsite/admin', icon:PencilSquareIcon },
@@ -54,6 +53,9 @@ export default function Header() {
           </Link>
           <Link href="/guide" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             SSS
+          </Link>
+          <Link href="/community" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
+            Komünite
           </Link>
           <Link href="/contact" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             İletişim
@@ -275,6 +277,9 @@ export default function Header() {
                 </Link>
                 <Link href="/guide" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
                   SSS
+                </Link>
+                <Link href="/community" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
+                  Komünite
                 </Link>
                 <Link href="/contact" className="block md:hidden font-semibold leading-6 text-gray-900 pt-5">
                   İletişim

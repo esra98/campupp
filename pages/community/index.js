@@ -339,7 +339,7 @@ export default function Community() {
                   <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="md:flex items-baseline justify-between border-b border-gray-200 pb-6">
                       <div>
-                        <h1 className="text-3xl font-semibold tracking-tight text-green-800">Mesaj Panoları</h1>
+                        <h1 className="text-3xl mt-5 font-semibold tracking-tight text-green-800">Mesaj Panoları</h1>
                         <p className="mt-2 font-light text-gray-500 sm:text-xl dark:text-gray-400">Aklınıza takılan konularda mesaj panosu oluşturun ve kampçı komünitesinden fikir alın.</p>        
                       </div>                  
                       <div className="flex items-center mt-5">
