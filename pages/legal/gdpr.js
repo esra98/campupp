@@ -38,7 +38,7 @@ export default function GDPR() {
                 </p>
                 <h3>Kişisel Verilerin Toplanması ve Kullanımı </h3>
                 <p>
-                Şirket, web sitemizde gezinirken veya hizmetlerimizden yararlanırken Kullanıcılar'dan bazı kişisel bilgileri toplayabilir. Bu kişisel bilgiler, Kullanıcılar&apos;ın Google hesapları aracılığıyla sağladığı ad, fotoğraf, e-posta adresi ve profil bilgileri gibi bilgileri içerebilir. 
+                Şirket, web sitemizde gezinirken veya hizmetlerimizden yararlanırken Kullanıcılar&apos;dan bazı kişisel bilgileri toplayabilir. Bu kişisel bilgiler, Kullanıcılar&apos;ın Google hesapları aracılığıyla sağladığı ad, fotoğraf, e-posta adresi ve profil bilgileri gibi bilgileri içerebilir. 
                 </p>
                 <p>
                 Bu kişisel bilgiler, aşağıdaki amaçlarla toplanabilir ve kullanılabilir: 
