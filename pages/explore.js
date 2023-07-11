@@ -7,122 +7,26 @@ import {
 } from '@react-google-maps/api';
 import Layout from '@/components/Layout';
 import Banner from '@/components/Banner';
+import Link from "next/link";
 
+var iconSea = {
+  path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
+  fillColor: '#1E2F97',
+  fillOpacity: 1,
+  strokeWeight: 0,
+  scale: 0.4,
+  width: 10,
+  height: 130
+}
 const markers = [
   {
     id: 1,
-    name: 'Efes Antik Kenti',
-    type: 'antic',
-    position: { lat: 37.9399, lng: 27.3419 },
-    link: ""
-  },
-  {
-    id: 2,
-    name: 'Bergama Antik Kenti (Pergamon)',
-    type: 'antic',
-    position: { lat: 39.1256, lng: 27.1856 },
-  },
-  {
-    id: 3,
-    name: 'Hierapolis Antik Kenti',
-    type: 'antic',
-    position: { lat: 37.9194, lng: 29.1264 },
-  },
-  {
-    id: 4,
-    name: 'Side Antik Kenti',
-    type: 'antic',
-    position: { lat: 36.7667, lng: 31.3908 },
-  },
-  {
-    id:5,
-    name: 'Termessos Antik Kenti',
-    type: 'antic',
-    position: { lat: 36.9974, lng: 30.5811 },
-  },
-  {
-    id:6,
-    name: 'Lidya Yolu',
-    type: 'hiking',
-    position: { lat: 36.9974, lng: 30.5811 },
-  },
-  {
-    id:7,
-    name: 'Aziz Paul Yolu',
-    type: 'hiking',
-    position: { lat: 37.7192, lng: 31.1207 },
-  },
-  {
-    id:8,
-    name: 'Kaçkar Dağları',
-    type: 'hiking',
-    position: { lat: 40.9545, lng: 41.1184 }
-  },
-  {
-    id:9,
-    name: 'Kapadokya Yürüyüş Rotaları',
-    type: 'hiking',
-    position: { lat: 38.6650, lng: 34.8456 },
-  },
-  {
-    id:10,
-    name: 'Aladağlar Milli Parkı',
-    type: 'hiking',
-    position: { lat: 37.9603, lng: 35.3857 },
-  },
-  {
-    id:12,
-    name: 'Pamukkale ',
-    type: 'natural',
-    position: { lat: 37.9214, lng: 29.1175 },
-  },
-  {
-    id:13,
-    name: 'Göreme Milli Parkı',
-    type: 'natural',
-    position: { lat: 38.6437, lng: 34.8303 },
-  },
-  {
-    id:14,
-    name: 'ÖlÜdeniz / Mavi Lagün',
-    type: 'natural',
-    position: { lat: 36.5529, lng: 29.1150 },
-  },
-  {
-    id:15,
-    name: 'Ararat Dağı',
-    type: 'natural',
-    position: { lat: 39.7000, lng: 44.2917 },
-  },
-  {
-    id:16,
-    name: 'Olimpos Milli Parkı',
-    type: 'nationalParks',
-    position: { lat: 36.3999, lng: 30.4542 },
-  },
-  {
-    id:17,
-    name: 'Göksu Delta Milli Parkı',
-    type: 'nationalParks',
-    position:{ lat: 36.3694, lng: 33.6894 },
-  },
-  {
-    id:18,
-    name: 'Gelibolu Yarımadası Tarihi Milli Parkı',
-    type: 'nationalParks',
-    position:{ lat: 40.2500, lng: 26.4000 },
-  },
-  {
-    id:19,
-    name: 'Köprülü Kanyon Milli Parkı',
-    type: 'nationalParks',
-    position: { lat: 37.0249, lng: 31.1347 },
-  },
-  {
-    id:20,
-    name: 'Dilek Yarımadası-Büyük Menderes Delta Milli Parkı',
-    type: 'nationalParks',
-    position: { lat: 37.7714, lng: 27.1866 },
+    name: 'Kabak Koyu',
+    type: 'beach',
+    position:{ lat: 36.3905, lng: 29.0879 },
+    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    desc:"Kabak Koyu, mistik atmosferi ve nefes kesen manzaralarıyla büyüleyici bir kamp deneyimi sunar. ",
+    icon: iconSea
   },
 ];
 
@@ -254,6 +158,27 @@ export default function BlogPost() {
                         </div>
                     </fieldset>
                 </div>
+                <div className="mt-2">
+                    <fieldset>
+                        <div className="space-y-6">
+                            <div className="relative flex gap-x-3">
+                                <div className="flex h-6 items-center">
+                                    <input
+                                    checked={selectedTypes.includes('beach')}
+                                    onChange={() => handleTypeCheckboxChange('beach')}
+                                    type="checkbox"
+                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                    />
+                                </div>
+                                <div className="text-sm leading-6">
+                                    <label htmlFor="comments" className="font-medium text-gray-900">
+                                    Sahiller
+                                  </label>
+                                </div> 
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
                 {/* Add more checkboxes for other marker types */}
               </div>
             </div>
@@ -267,16 +192,21 @@ export default function BlogPost() {
                       onClick={() => setActiveMarker(null)}
                       mapContainerStyle={{ width: '100%', height: '90vh' }}
                     >
-                      {filteredMarkers.map(({ id, name, position }) => (
+                      {filteredMarkers.map(({ id, name, position, link, desc, icon}) => (
                         <MarkerF
                           key={id}
                           position={position}
+                          className="h-2 w-2"
+                          icon={icon}
                           onClick={() => handleActiveMarker(id)}
+                          title="Uluru (Ayers Rock)"
                         >
                           {activeMarker === id ? (
-                            <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
+                            <InfoWindowF  onCloseClick={() => setActiveMarker(null)}>
                               <div>
-                                <p>{name}</p>
+                                <p className='font-semibold'>{name}</p>
+                                <p>{desc}</p>
+                                <button href={link} className='flex-none mt-1 rounded-full text-center bg-cc-primary px-2 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'>Daha Fazla Bilgi Alın</button>
                               </div>
                             </InfoWindowF>
                           ) : null}
