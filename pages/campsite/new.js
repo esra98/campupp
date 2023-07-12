@@ -13,7 +13,7 @@ export default function CampsiteAdd(){
         });
       }, [session]);
     return(
-        <Layout>
+        /*<Layout>
             {productInfo && (
             <>
             <div className=" h-screen -mt-5 w-screen flex items-center">
@@ -29,7 +29,12 @@ export default function CampsiteAdd(){
                 <CampsiteForm/>
             </>
             )}
-       </Layout>
+       </Layout> 
+            */
+            <Layout>
+                <CampsiteForm/>
+            </Layout>   
+        
     )
 
 }
