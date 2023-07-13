@@ -1,7 +1,9 @@
 import Layout from "@/components/Layout";
-import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react";
+import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import Modal from 'react-modal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from "next/link";
@@ -15,6 +17,9 @@ export default function CampsiteAdd(){
     const [category,setCategory] = useState("Kamp İpuçları ve Püf Noktaları");
     const [language,setLanguage,] = useState("tr");
     
+    const [loading,setLoading] = useState(false);
+
+    const router = useRouter();
     async function saveBlog(ev) {
         ev.preventDefault();
         if(title==""){
@@ -40,13 +45,15 @@ export default function CampsiteAdd(){
         if (!session?.user.email) {
             return
         }
+        setLoading(true)
         const data = {title,shortDesc,content,image,category,language}
         const res = await axios.post('/api/blog',data);
         if(res.data=="ok"){
-            window.location.reload()
+            await router.push('/blog');
         }else{
             toast.error('İşlem tamamlanamadı, lütfen daha sonra tekrar deneyin.')
         }
+        setLoading(false)
     }
     const handleSelectionChange = (selected) => {
         setCategory(selected);
@@ -88,6 +95,89 @@ export default function CampsiteAdd(){
     }
     return(
         <Layout>
+            <Modal
+                isOpen={loading}
+                onRequestClose={()=>setLoading(false)}
+                contentLabel="Example Modal"
+                >
+                <>
+                    <div
+                    className="
+                        justify-center 
+                        items-center 
+                        flex 
+                        overflow-x-hidden 
+                        overflow-y-auto 
+                        fixed 
+                        inset-0 
+                        z-50 
+                        outline-none 
+                        focus:outline-none
+                        bg-neutral-800/70
+                    "
+                    >
+                    <div className="
+                        relative 
+                        w-full
+                        md:w-4/6
+                        lg:w-3/6
+                        xl:w-2/5
+                        my-6
+                        mx-auto 
+                        lg:h-auto
+                        md:h-auto
+                        lg:mt-24
+                        "
+                    >
+                        {/*content*/}
+                        <div className={`
+                        translate
+                        duration-300
+                        h-full
+                        `}>
+                        <div className="
+                            translate
+                            h-full
+                            lg:h-auto
+                            md:h-auto
+                            border-0 
+                            rounded-lg 
+                            shadow-lg 
+                            relative 
+                            flex 
+                            flex-col 
+                            w-full 
+                            bg-white 
+                            outline-none 
+                            focus:outline-none
+                        "
+                        >
+                            {/*header*/}
+                            <div className="
+                            flex 
+                            items-center 
+                            p-6
+                            rounded-t
+                            justify-center
+                            relative
+                            border-b-[1px]
+                            "
+                            >
+                            
+                            <div className="text-lg font-semibold">
+                                Düzenleniyor...
+                            </div>
+                            </div>
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                              <p>Değişiklikler ekleniyor, lütfen bekleyiniz.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </>
+            </Modal>
             <ToastContainer />
             <div className=' w-full px-16'>
                     <form onSubmit={saveBlog} className="p-5 m-5 border rounded-2xl bg-gray-100">

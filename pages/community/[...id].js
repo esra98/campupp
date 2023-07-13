@@ -253,20 +253,20 @@ export default function BlogPost() {
                             alt="Hello World!"
                         />
                         ))}
-                        <time class="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{board?.createdAt?.substring(0, 10)}</time>
+                        <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{board?.createdAt?.substring(0, 10)}</time>
                     </div>
                     <div className='mt-8'>
-                        <ol class="relative border-l border-gray-200"> 
+                        <ol className="relative border-l border-gray-200"> 
                             {board.replies?.length>0 && board.replies.map((reply, index) => (                 
-                            <li class="mb-10 ml-6" key={board.replies.created}>            
-                                <span class="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
+                            <li className="mb-10 ml-6" key={board.replies.created}>            
+                                <span className="absolute flex items-center justify-center w-8 h-8 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
                                     <FaUserAlt className="mr-1.5 h-5 w-5 flex-shrink-0 ml-1.5" aria-hidden="true" />
                                 </span>
-                                <div class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex">
-                                    <time class="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{reply.created.substring(0, 10)}</time>
+                                <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex">
+                                    <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">{reply.created.substring(0, 10)}</time>
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-500 italic">{reply.anonymous ? "Anonim" : reply.user}: </div>
-                                        <div class="text-sm font-normal text-gray-500 ">{reply.replyText} </div>
+                                        <div className="text-sm font-semibold text-gray-500 italic">{reply.anonymous ? "Anonim" : reply.user}: </div>
+                                        <div className="text-sm font-normal text-gray-500 ">{reply.replyText} </div>
                                     </div>
                                 </div>
                             </li>

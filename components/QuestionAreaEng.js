@@ -56,7 +56,7 @@ const QuestionArea = ({ placeId, owner }) => {
     if(repliedQuestionId){        
         const res = await axios.put('/api/question', {replyText,_id:repliedQuestionId});
         if(res.data == "ok"){
-            window.location.reload()
+            push(eload()
         }else{
           toast.error('An error occurred. Please try again later.')
         }
@@ -95,7 +95,7 @@ const QuestionArea = ({ placeId, owner }) => {
     };
     const res = await axios.post('/api/question', data);
     if(res.data=="ok"){
-        window.location.reload();
+        push(eload();
     }else{
       toast.error('An error occurred. Please try again later.')
     }

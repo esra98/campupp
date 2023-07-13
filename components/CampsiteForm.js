@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import axios from "axios";
-import Spinner from "@/components/Spinner";
+import Modal from 'react-modal';
 import { useSession } from "next-auth/react"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -185,10 +185,12 @@ export default function ProductForm({
   const [titleEnglish, setTitleEnglish] = useState(existingTitleEnglish || '')
   const [descriptionEnglish, setDescriptionEnglish] = useState(existingDescriptionEnglish || '')
  
+  const [loading,setLoading] = useState(false);
   const router = useRouter()
   const {data:session} = useSession();
 
   async function saveProduct(ev) {
+    
     ev.preventDefault();
     if(title==""){
       toast.error('Başlık alanı boş bırakılamaz')
@@ -211,6 +213,7 @@ export default function ProductForm({
       isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
       isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan
     };
+    setLoading(true)
     if (_id) {
       //update
       await axios.put('/api/campsite', {...data,_id});
@@ -218,6 +221,7 @@ export default function ProductForm({
       //create
       await axios.post('/api/campsite', {...data,user:session?.user?.email});
     }
+    setLoading(false)
     toast.success('Kamp yeriniz güncellendi')
   }
 
@@ -356,6 +360,89 @@ export default function ProductForm({
   }
   return (
       <>
+      <Modal
+                isOpen={loading}
+                onRequestClose={()=>setLoading(false)}
+                contentLabel="Example Modal"
+                >
+                <>
+                    <div
+                    className="
+                        justify-center 
+                        items-center 
+                        flex 
+                        overflow-x-hidden 
+                        overflow-y-auto 
+                        fixed 
+                        inset-0 
+                        z-50 
+                        outline-none 
+                        focus:outline-none
+                        bg-neutral-800/70
+                    "
+                    >
+                    <div className="
+                        relative 
+                        w-full
+                        md:w-4/6
+                        lg:w-3/6
+                        xl:w-2/5
+                        my-6
+                        mx-auto 
+                        lg:h-auto
+                        md:h-auto
+                        lg:mt-24
+                        "
+                    >
+                        {/*content*/}
+                        <div className={`
+                        translate
+                        duration-300
+                        h-full
+                        `}>
+                        <div className="
+                            translate
+                            h-full
+                            lg:h-auto
+                            md:h-auto
+                            border-0 
+                            rounded-lg 
+                            shadow-lg 
+                            relative 
+                            flex 
+                            flex-col 
+                            w-full 
+                            bg-white 
+                            outline-none 
+                            focus:outline-none
+                        "
+                        >
+                            {/*header*/}
+                            <div className="
+                            flex 
+                            items-center 
+                            p-6
+                            rounded-t
+                            justify-center
+                            relative
+                            border-b-[1px]
+                            "
+                            >
+                            
+                            <div className="text-lg font-semibold">
+                                Düzenleniyor...
+                            </div>
+                            </div>
+                            {/*body*/}
+                            <div className="relative p-6 flex-auto">
+                              <p>Değişiklikler ekleniyor, lütfen bekleyiniz.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </>
+      </Modal>
       <ToastContainer />
       <form onSubmit={saveProduct} className="p-5 m-5 relative">
       <button
