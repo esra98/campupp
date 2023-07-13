@@ -14,7 +14,7 @@ export default function CampsiteAdd(){
     const [shortDesc,setShortDesc] = useState("");
     const [content,setContent] = useState("");
     const [image,setImage] = useState("");
-    const [category,setCategory] = useState("Kamp İpuçları ve Püf Noktaları");
+    const [category,setCategory] = useState("Keşfedin Sayfaları");
     const [language,setLanguage,] = useState("tr");
     
     const [loading,setLoading] = useState(false);

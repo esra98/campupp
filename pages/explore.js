@@ -468,7 +468,7 @@ const markers = [
     name: 'Patara Plajı',
     type: 'beach',
     position:{ lat: 36.2627, lng: 29.3135 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "http://localhost:3000/blog/64aff02d901d8aac5495fef8",
     desc:"Patara Plajı, Antalya'nın Kaş ilçesinde yer alır ve 18 kilometrelik uzun kumsalıyla ünlüdür, aynı zamanda caretta carettaların üreme alanlarından biridir.",
     icon: beachesIcons
   },
@@ -477,7 +477,7 @@ const markers = [
     name: 'Çeşme Altınkum Plajı',
     type: 'beach',
     position: { lat: 38.3191, lng: 26.3145 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64aff375ec8e0f8803206e4d",
     desc:"Çeşme Altınkum Plajı, İzmir'in Çeşme ilçesinde bulunur ve kumsalı, turkuaz suları ve su sporları olanaklarıyla ünlüdür.",
     icon: beachesIcons
   },
@@ -486,7 +486,7 @@ const markers = [
     name: 'Cleopatra Plajı',
     type: 'beach',
     position:{ lat: 36.5470, lng: 31.9861 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64aff545ec8e0f8803206e55",
     desc:"Cleopatra Plajı, Alanya'nın güneyinde yer alır ve beyaz kumları ve berrak sularıyla ünlüdür, Riviera'nın en güzel plajlarından biridir.",
     icon: beachesIcons
   },
@@ -495,7 +495,7 @@ const markers = [
     name: 'Çıralı Plajı',
     type: 'beach',
     position: { lat: 36.3795, lng: 30.4779 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64aff6b6ec8e0f8803206e5d",
     desc:"Çıralı Plajı, Antalya'nın Kemer ilçesinde yer alır ve doğal güzelliği, sakin atmosferi ve yanardağ kalıntılarıyla ünlüdür..",
     icon: beachesIcons
   },
@@ -504,7 +504,7 @@ const markers = [
     name: 'Akyarlar Plajı',
     type: 'beach',
     position: { lat: 37.0211, lng: 27.3475 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64aff93919da21016f803a05",
     desc:"Akyarlar Plajı, Bodrum'un güneyinde yer alır ve uzun kumsalı, sakin atmosferi ve rüzgar sörfü olanaklarıyla bilinir.",
     icon: beachesIcons
   },
@@ -513,7 +513,7 @@ const markers = [
     name: 'Ölüdeniz',
     type: 'beach',
     position: { lat: 36.5456, lng: 29.1234 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64affabc19da21016f803a11",
     desc:"Ölüdeniz, Fethiye'de yer alan ünlü bir sahil beldesidir ve turkuaz renkli lagünü, etkileyici manzarası ve yamaç paraşütü (paragliding) aktiviteleriyle ünlüdür.",
     icon: beachesIcons
   },
@@ -522,7 +522,7 @@ const markers = [
     name: 'Kabak Koyu',
     type: 'beach',
     position:{ lat: 36.4435, lng: 29.0922 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64affde80b2b0c9cbdadd780",
     desc:"Kabak Koyu, Fethiye'nin batısında yer alır ve doğal güzelliği, çam ormanları ve turkuaz sularıyla ünlüdür.",
     icon: beachesIcons
   },
@@ -531,7 +531,7 @@ const markers = [
     name: 'Kaputaş Plajı',
     type: 'beach',
     position: { lat: 36.3823, lng: 29.3635 },
-    link: "https://developers.google.com/maps/documentation/javascript/markers",
+    link: "https://www.campupp.com/blog/64b0003d19da21016f803a28",
     desc:"Kaputaş Plajı, Muğla'nın Kalkan ilçesinde yer alır ve turkuaz renkli denizi ve çevresindeki muhteşem doğal kayalıklarıyla ünlüdür.",
     icon: beachesIcons
   },

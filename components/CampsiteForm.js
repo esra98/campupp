@@ -241,9 +241,6 @@ export default function ProductForm({
            return [...oldImages,...res.data.links]
         })
     }
-    const button = document.getElementById("saveBtn");
-    // Programmatically click the button
-    button.click();
   }
   async function removePhoto(ev, filename){
     if(title==""){
