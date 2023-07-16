@@ -8,6 +8,7 @@ import {
 import Layout from '@/components/Layout';
 import Banner from '@/components/Banner';
 import Link from 'next/link';
+import Head from 'next/head';
 
 let anticsIcon = "https://campupp.s3.eu-north-1.amazonaws.com/antics-icon.png" 
 let naturalIcons = "https://campupp.s3.eu-north-1.amazonaws.com/naturals-icon.png"
