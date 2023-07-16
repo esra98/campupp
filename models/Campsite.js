@@ -17,6 +17,7 @@ const CampsiteSchema = new Schema({
   city: String,
   district: String,
   contactTel: String,
+  contactTelAlt: String,
   contactInstagram: String,
   contactFacebook: String,
   isReservationModuleAvailable: Boolean,

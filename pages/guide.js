@@ -233,7 +233,7 @@ export default function Guides() {
                                     />
                                 </Disclosure.Button>
                                 <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-                                CampUpp tarafından hiçbir şekilde ücret alınmadığını bilmeni isteriz. Ödeme kamp alanı işletmecileri ve senin aranda olacak. Kamp yeri tesislerinin sayfasına girdiğinde &quot;Bu işletmede ödemenizi kredi kartı ile yapabilirsiniz.&quot; yazısını görürsen bu işletmenin kredi kartı ile de ödeme kabul ettiğini gösterir. Aksi halde kamp yeri ödemelerini sadece nakit veya EFT gibi yollarla tahsil ediyor da olabilir. Ödemeler hakkında daha ayrıntılı bilgi için konaklama yapacağın kamp alanı işletmecileri ile iletişime geçmelisin.                                 </Disclosure.Panel>
+                                CampUpp tarafından hiçbir şekilde ücret alınmadığını bilmeni isteriz. Ödeme kamp alanı işletmecileri ve senin aranda olacak. Kamp yeri tesislerinin sayfasına girdiğinde &;Bu işletmede ödemenizi kredi kartı ile yapabilirsiniz.&quot; yazısını görürsen bu işletmenin kredi kartı ile de ödeme kabul ettiğini gösterir. Aksi halde kamp yeri ödemelerini sadece nakit veya EFT gibi yollarla tahsil ediyor da olabilir. Ödemeler hakkında daha ayrıntılı bilgi için konaklama yapacağın kamp alanı işletmecileri ile iletişime geçmelisin.                                 </Disclosure.Panel>
                                 </>
                             )}
                             </Disclosure>

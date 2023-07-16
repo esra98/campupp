@@ -32,7 +32,12 @@ export default function CampsiteAdd(){
        </Layout> 
             */
             <Layout>
-                <CampsiteForm/>
+                {session?.user?.email && (
+                    <CampsiteForm/>
+                )}
+                {!session?.user?.email && (
+                    <div>Kullanıcı Girişi Yapınız</div>
+                )}
             </Layout>   
         
     )

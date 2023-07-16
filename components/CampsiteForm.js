@@ -83,6 +83,7 @@ export default function ProductForm({
   isPresentStowe: existingIsPresentStowe,
   isPresentPicnicTable: existingIsPresentPicnicTable,
   contactTel:existingContactTel,
+  contactTelAlt:existingContactTelAlt,
   contactInstagram:existingContactInstagram,
   contactFacebook:existingContactFacebook,
 
@@ -109,6 +110,7 @@ export default function ProductForm({
   const [images,setImages] = useState(existingImages || []);
 
   const[contactTel, setContactTel] = useState(existingContactTel||'')
+  const[contactTelAlt, setContactTelAlt] = useState(existingContactTelAlt||'')
   const[contactInstagram, setContactInstagram] = useState(existingContactInstagram||'')
   const[contactFacebook, setContactFacebook] = useState(existingContactFacebook||'')
   
@@ -199,17 +201,24 @@ export default function ProductForm({
     if(contactTel){
         const checkPhone = /^(((\+|00)?(90)|0)[-| ]?)?((5\d{2})[-| ]?(\d{3})[-| ]?(\d{2})[-| ]?(\d{2}))$/.test(contactTel)
         if(!checkPhone){
-          toast.error('Geçerli bir telefon numarası giriniz.')
+          toast.error('Geçerli bir cep telefon numarası giriniz.')
           return;
         }
-      }
+    }
+    if(contactTelAlt){
+        const checkPhone =/^(0)([2348]{1})([0-9]{2})\s?([0-9]{3})\s?([0-9]{2})\s?([0-9]{2})$/.test(contactTelAlt)
+        if(!checkPhone){
+          toast.error('Geçerli bir sabit telefon numarası giriniz.')
+          return;
+        }
+    }
     const data = {
       title,description,price,images, address,selectedCounty, selectedCity,activitiesYoga,isPublicTransportationPossible,mapLatitute,mapLangtitute,
       activitiesCanoing, activitiesTrekking, activitiesSurf, activitiesBeachVolleyball,activitiesVolleyball,activitiesSpa, activitiesAtv, activitiesParagliding, activitiesBoatRental, 
       activitiesBoatTour, activitiesPool,isFriendlyAlcohol,isFriendlyKid,isFriendlyRemoteWork,isFriendlyVan,isFriendlyPet, descriptionKid,descriptionPet,descriptionRemoteWork,descriptionVan,
       isPresentBungalow,isPresentBreakfastIncluded,isNearSea,distanceSea,isNearLake, distanceLake,isNearForest, distanceForest,isNearRestaurant, distanceRestaurant,isNearStore,distanceStore,isNearBar,distanceBar,
       isPresentPrivateBeach, isPresentSunbedIncluded, isPresentSunbedRenting,isPresentDishwasher, isPresentElectricity,isPresentFirePit,isPresentFridge,isPresentHotWater,isPresentKitchen,
-      isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactInstagram, contactFacebook,isEnglishSpoken,
+      isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactTelAlt, contactInstagram, contactFacebook,isEnglishSpoken,
       isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
       isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan
     };
@@ -441,7 +450,7 @@ export default function ProductForm({
                 </>
       </Modal>
       <ToastContainer />
-      <form onSubmit={saveProduct} className="p-5 m-5 relative">
+      <form onSubmit={saveProduct} className="p-5 md:p-20 m-5 relative">
       <button
           type="submit"
           id="saveBtn"
@@ -500,18 +509,31 @@ export default function ProductForm({
                         </label>
                         <p className="mt-3 text-sm leading-6 text-gray-600">Paylaştığınız tüm iletişim bilgileri profilinizde açık bir şekilde yayınlanacaktır.</p>
                         <div className="mt-2">
-                            <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <div className="flex rounded-md shadow-sm mt-5 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                 <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm font-bold">Telefon Numarası :</span>
                                 <input
                                     type="tel"
-                                    placeholder="telefon numarası"
+                                    placeholder="cep telefon numarası"
                                     value={contactTel} onChange={ev => setContactTel(ev.target.value)}
                                     className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                 />
                             </div>
                             <div className="py-3 px-12 bg-yellow-100 opacity-50 mt-6 rounded-lg  shadow-sm flex gap-2">
                                 <FiAlertTriangle className="h-10 w-10 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
-                                <p className="text-sm opacity-100 text-black">Telefon numaranızı <span className="font-bold">&apos;905*********&apos;</span> formatında yazmamanız durumunda, profilinizdeki WhatsApp üzerinden mesaj at butonu doğru çalışmayacaktır. Numaranızı başında + işareti olmadan 90 yazarak başlatıp rakamlar arasında boşluk bırakmayız.</p>
+                                <p className="text-sm opacity-100 text-black">Cep telefon numaranızı <span className="font-bold">&apos;905*********&apos;</span> formatında yazmamanız durumunda, profilinizdeki WhatsApp üzerinden mesaj at butonu doğru çalışmayacaktır. Numaranızı başında + işareti olmadan 90 yazarak başlatıp rakamlar arasında boşluk bırakmayız.</p>
+                            </div>
+                            <div className="flex rounded-md shadow-sm mt-5 ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm font-bold">Sabit Telefon Numarası :</span>
+                                <input
+                                    type="tel"
+                                    placeholder="sabit telefon numarası"
+                                    value={contactTelAlt} onChange={ev => setContactTelAlt(ev.target.value)}
+                                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                            <div className="py-3 px-12 bg-yellow-100 opacity-50 mt-6 rounded-lg  shadow-sm flex gap-2">
+                                <FiAlertTriangle className="h-10 w-10 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                                <p className="text-sm opacity-100 text-black">Sabit telefon numaranızı <span className="font-bold">&apos;02*********&apos;</span> formatında yazmamanız gerekmektedir.</p>
                             </div>
                             <div className="flex rounded-md mt-5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                 <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm font-bold">Instagram sayfası :</span>

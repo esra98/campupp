@@ -71,7 +71,7 @@ export default async function handle(req, res) {
       isPresentPrivateBeach, isPresentSunbedIncluded, isPresentSunbedRenting,isPresentDishwasher, isPresentElectricity,isPresentFirePit,isPresentFridge,isPresentHotWater,isPresentKitchen,
       isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactInstagram, contactFacebook,
       isEnglishSpoken,isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
-      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan} = req.body;
+      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan,contactTelAlt} = req.body;
     const productDoc = await Campsite.create({
       user,title,description,price,images,address,district:selectedCounty, city:selectedCity,activitiesYoga, isPublicTransportationPossible,mapLatitute,mapLangtitute,
       activitiesCanoing, activitiesTrekking, activitiesSurf, activitiesBeachVolleyball,activitiesVolleyball,activitiesSpa, activitiesAtv, activitiesParagliding, activitiesBoatRental, 
@@ -80,7 +80,7 @@ export default async function handle(req, res) {
       isPresentPrivateBeach, isPresentSunbedIncluded, isPresentSunbedRenting,isPresentDishwasher, isPresentElectricity,isPresentFirePit,isPresentFridge,isPresentHotWater,isPresentKitchen,
       isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactInstagram, contactFacebook,
       isEnglishSpoken,isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
-      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan
+      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan,contactTelAlt
     })
     res.json(productDoc);
   }
@@ -93,7 +93,7 @@ export default async function handle(req, res) {
       isPresentPrivateBeach, isPresentSunbedIncluded, isPresentSunbedRenting,isPresentDishwasher, isPresentElectricity,isPresentFirePit,isPresentFridge,isPresentHotWater,isPresentKitchen,
       isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactInstagram, contactFacebook,
       isEnglishSpoken,isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
-      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan} = req.body;
+      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan,contactTelAlt} = req.body;
     await Campsite.updateOne({_id}, {title,description,price,images,address,district:selectedCity, city:selectedCounty,activitiesYoga, isPublicTransportationPossible,mapLatitute,mapLangtitute,
       activitiesCanoing, activitiesTrekking, activitiesSurf, activitiesBeachVolleyball,activitiesVolleyball,activitiesSpa, activitiesAtv, activitiesParagliding, activitiesBoatRental, 
       activitiesBoatTour, activitiesPool,isFriendlyAlcohol,isFriendlyKid,isFriendlyRemoteWork,isFriendlyVan,isFriendlyPet, descriptionKid,descriptionPet,descriptionRemoteWork,
@@ -101,7 +101,7 @@ export default async function handle(req, res) {
       isPresentPrivateBeach, isPresentSunbedIncluded, isPresentSunbedRenting,isPresentDishwasher, isPresentElectricity,isPresentFirePit,isPresentFridge,isPresentHotWater,isPresentKitchen,
       isPresentLaundry, isPresentMicrowave, isPresentParkLot, isPresentShower, isPresentStowe, isPresentWC, isPresentWifi, contactTel, contactInstagram, contactFacebook,
       isEnglishSpoken,isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
-      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan});
+      isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan,contactTelAlt});
     res.json(true);
   }
 

@@ -461,14 +461,22 @@ export default function CampsiteDetail({title, description}) {
                                 place?.address}
                             </Link>
                         </div>
+                        {place.contactTel && (
                         <div>
-                            {place.contactTel && (
                             <Link href={'tel:'+place.contactTel}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
                                 <BiPhoneCall className="mr-1.5 h-6 w-6 flex-shrink-0 text-cc-primary" aria-hidden="true" />
                                 {place.contactTel} 
                             </Link>
-                            )}
                         </div>
+                        )}
+                        {place.contactTelAlt && (
+                        <div>
+                            <div href={'tel:'+place.contactTelAlt}  className="flex text-gray-600 h-8 mt-2 gap-1 hover:underline">
+                                <BiPhoneCall className="mr-1.5 h-6 w-6 flex-shrink-0 text-cc-primary" aria-hidden="true" />
+                                {place.contactTelAlt} 
+                            </div>
+                        </div>
+                        )}
                         <div>
                             {place?.contactInstagram && (
                             <Link href={place?.contactInstagram}  className="flex text-gray-600 h-8 gap-1 hover:underline" target="_blank">
