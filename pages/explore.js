@@ -423,7 +423,7 @@ export default function BlogPost() {
           <article className="w-full p-3 md:p-10 shadow text-base rounded-md leading-tight max-w-none bg-white">
           <div className='my-5'>
             <h1 className="text-3xl mt-5 font-semibold tracking-tight text-green-800">Türkiye&apos;yi Keşfedin!</h1>
-            <p className="mt-2 font-light text-gray-500 sm:text-xl dark:text-gray-400">Haritadaki işaretlerin üzerine tıklayarak bu alanlarla ilgili blog yazılarımıza ulaşın. Türkiye'yi keşfetmeye nereden başlamak istediğinize karar verin</p>
+            <p className="mt-2 font-light text-gray-500 sm:text-xl dark:text-gray-400">Haritadaki işaretlerin üzerine tıklayarak bu alanlarla ilgili blog yazılarımıza ulaşın. Türkiye&apos;yi keşfetmeye nereden başlamak istediğinize karar verin</p>
           </div>
             <div className="container">
               <div className="type-checkboxes md:flex gap-5 my-5">
