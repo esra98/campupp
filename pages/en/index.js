@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import Link from 'next/link';
 import axios from "axios";
+import Explore from '@/components/ExploreBannerEng';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -717,7 +718,7 @@ function CampsiteList() {
                       <div className="pt-32 flex items-center mt-5">
                       <div className="text-center w-full">
                           <img
-                              src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
+                              src="https://campupp.s3.eu-north-1.amazonaws.com/camp-loading.gif"
                               alt="kamp rezervasyon"
                               className="h-72 object-center mx-auto -mt-32"
                           />
@@ -739,6 +740,7 @@ function CampsiteList() {
           
         </main>
       </div>
+      <Explore /> 
     </Layout>
   );
 }

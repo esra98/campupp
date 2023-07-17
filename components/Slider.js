@@ -29,6 +29,11 @@ export default function Slider({photos}) {
             )}
             </div>
           </div>
+          <div className='bottom-2 flex gap-2 mt-3 justify-center'>
+            <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+            <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+            <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+          </div>
         </div>
       </div>
     </>

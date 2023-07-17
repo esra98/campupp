@@ -12,6 +12,8 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import Link from 'next/link';
 import axios from "axios";
+import Explore from '@/components/ExploreBanner';
+import Example from '@/components/Banner';
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -653,6 +655,7 @@ function CampsiteList() {
                       <Link key={place._id} href={'/campsite/view/'+ place._id} className="group overflow-hidden rounded-xl">
                         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden xl:aspect-h-8 xl:aspect-w-7">
                           <Slider photos={place.images}/>
+                          
                         </div>
                         <h3 className="mt-4 text-lg font-medium text-gray-900">{place.title}</h3>
                         {place.city && place.district && (
@@ -671,7 +674,7 @@ function CampsiteList() {
                       <div className="pt-32 flex items-center mt-5">
                       <div className="text-center w-full">
                           <img
-                              src="https://campupp.s3.eu-north-1.amazonaws.com/Artboard+1.png"
+                              src="https://campupp.s3.eu-north-1.amazonaws.com/camp-loading.gif"
                               alt="kamp rezervasyon"
                               className="h-72 object-center mx-auto -mt-32"
                           />
@@ -693,6 +696,7 @@ function CampsiteList() {
           
         </main>
       </div>
+      <Explore />
     </Layout>
   );
 }

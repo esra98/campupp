@@ -52,6 +52,12 @@ export default function Header() {
           <Link href="/en/guide" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             FAQ
           </Link>
+          <Link href="/en/community" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
+            Community
+          </Link>
+          <Link href="/en/explore" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
+            Explore Turkey
+          </Link>
           <Link href="/en/contact" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             Contact Us
           </Link>

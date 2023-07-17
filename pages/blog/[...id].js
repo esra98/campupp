@@ -39,8 +39,8 @@ export default function BlogPost({title, content, image, shortDesc }) {
               <span></span>
             </div>
           </header>
-          <div className="bg-opacity-100 bg-[rgb(31 41 55/var(--tw-bg-opacity))] p-9 md:px-20 mx-auto my-[-8rem] rounded-[0.25rem] justify-between flex z-20 relative">
-            <article className="lg:flex w-full p-10 shadow text-base rounded-md leading-tight max-w-none bg-white">
+          <div className="bg-opacity-100 bg-[rgb(31 41 55/var(--tw-bg-opacity))] p-5 md:px-20 mx-auto my-[-8rem] rounded-[0.25rem] justify-between flex z-20 relative">
+            <article className="lg:flex w-full px-2 py-5 md:p-10 shadow text-base rounded-md leading-tight max-w-none bg-white">
               <div className="md:w-full lg:w-2/3">
                 <nav className="flex mb-8" aria-label="Breadcrumb">
                   <ol className="inline-flex items-center space-x-1 md:space-x-3">
