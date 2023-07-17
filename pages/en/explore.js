@@ -22,7 +22,7 @@ const markers = [
     name: 'Ephesus Ancient City',
     type: 'antics',
     position: { lat: 37.939167, lng: 27.341056 },
-    link: "https://www.campupp.com/blog/64b16027c7c333bb2b1de1ef",
+    link: "https://en.wikipedia.org/wiki/Ephesus",
     desc: "Ephesus Ancient City is one of the largest and most important ancient cities in Anatolia. It is famous for its enchanting structures such as the Temple of Artemis, the Grand Theater, and the Celsus Library.",
     icon: anticsIcon
   },
@@ -31,7 +31,7 @@ const markers = [
     name: 'Perge Ancient City',
     type: 'antics',
     position: { lat: 36.961389, lng: 30.853889 },
-    link: "https://www.campupp.com/blog/64b16345a5ba53153b60b31d",
+    link: "https://en.wikipedia.org/wiki/Perga",
     desc: "Perge Ancient City is one of the most important cities in Pamphylia. This ancient city takes visitors on a journey through history with its impressive theater, agora (square), and ruins.",
     icon: anticsIcon
   },
@@ -40,7 +40,7 @@ const markers = [
     name: 'Aspendos Ancient Theater',
     type: 'antics',
     position: { lat: 36.940556, lng: 31.169444 },
-    link: "https://www.campupp.com/blog/64b16e2dfbefa9181ee16733",
+    link: "https://en.wikipedia.org/wiki/Aspendos",
     desc: "Aspendos Ancient Theater is one of the best-preserved ancient theaters from the Roman period. It is famous for its unique acoustics and captivating architecture.",
     icon: anticsIcon
   },
@@ -49,7 +49,7 @@ const markers = [
     name: 'Hierapolis Ancient City',
     type: 'antics',
     position: { lat: 37.9266, lng: 29.1274 },
-    link: "https://www.campupp.com/blog/64b171bdfbefa9181ee1673f",
+    link: "https://en.wikipedia.org/wiki/Hierapolis",
     desc: "Hierapolis Ancient City is located right next to Pamukkale. This ancient city offers visitors a unique experience with its ancient Roman ruins, enchanting theater, and famous thermal springs.",
     icon: anticsIcon
   },
@@ -58,7 +58,7 @@ const markers = [
     name: 'Aphrodisias Ancient City',
     type: 'antics',
     position: { lat: 37.7093, lng: 28.7271 },
-    link: "https://www.campupp.com/blog/64b1735dfbefa9181ee16747",
+    link: "https://en.wikipedia.org/wiki/Aphrodisias",
     desc: "Aphrodisias Ancient City was a city dedicated to Aphrodite in ancient times. The city is known for its magnificent theater, stadium, and famous Temple of Aphrodite.",
     icon: anticsIcon
   },
@@ -67,7 +67,7 @@ const markers = [
     name: 'Sagalassos Ancient City',
     type: 'antics',
     position: { lat: 37.6773, lng: 30.5170 },
-    link: "https://www.campupp.com/blog/64b1750ffbefa9181ee1674f",
+    link: "https://en.wikipedia.org/wiki/Sagalassos",
     desc: "Sagalassos Ancient City is an ancient city located in the Taurus Mountains. It stands out with its magnificent views, theater, and Agora.",
     icon: anticsIcon
   },
@@ -76,7 +76,7 @@ const markers = [
     name: 'Troy Ancient City',
     type: 'antics',
     position: { lat: 39.9576, lng: 26.2397 },
-    link: "https://www.campupp.com/blog/64b17685fbefa9181ee16757",
+    link: "https://en.wikipedia.org/wiki/Troy",
     desc: "Troy Ancient City is an ancient city where the legendary Trojan War took place. It is famous for its historical and mythological significance and captivates visitors with its discovered ruins during excavations.",
     icon: anticsIcon
   },
@@ -85,7 +85,7 @@ const markers = [
     name: 'Sardis Ancient City',
     type: 'antics',
     position: { lat: 38.483611, lng: 28.042222 },
-    link: "https://www.campupp.com/blog/64b16c9ba5ba53153b60b34d",
+    link: "https://en.wikipedia.org/wiki/Sardis",
     desc: "Sardis Ancient City is a historic city that was the capital of the Lydia Kingdom. It offers visitors a historical journey with its Temple of Artemis, Gymnasium, and ruins along the King's Road.",
     icon: anticsIcon
   },
@@ -94,7 +94,7 @@ const markers = [
     name: 'Nemrut Mountain Ruins',
     type: 'antics',
     position: { lat: 37.980833, lng: 38.740833 },
-    link: "https://www.campupp.com/blog/64b16ac1a5ba53153b60b33d",
+    link: "https://en.wikipedia.org/wiki/Mount_Nemrut",
     desc: "Nemrut Mountain is a historic site located in Adıyaman and contains the royal tombs of the Kingdom of Commagene. Its most important feature is the monumental statues and the unique view created during sunrise or sunset. These ancient tombs and statues provide a fascinating experience with their historical and archaeological significance, along with their natural beauty.",
     icon: anticsIcon
   },
@@ -103,7 +103,7 @@ const markers = [
     name: 'Göbekli Tepe',
     type: 'antics',
     position: { lat: 37.222917, lng: 38.922444 },
-    link: "https://www.campupp.com/blog/64b16971a5ba53153b60b335",
+    link: "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe",
     desc: "Göbekli Tepe is considered the world's oldest temple complex and represents a significant turning point in human history, dating back to the 9th millennium BCE.",
     icon: anticsIcon
   },
@@ -112,7 +112,7 @@ const markers = [
     name: 'Ani Ruins',
     type: 'antics',
     position: { lat: 40.5, lng: 43.566667 },
-    link: "https://www.campupp.com/blog/64b16821a5ba53153b60b32d",
+    link: "https://en.wikipedia.org/wiki/Ani",
     desc: "Ani Ruins is a historic site located within the borders of Kars and is an ancient medieval city that was an important center during the Middle Ages.",
     icon: anticsIcon
   },
@@ -121,7 +121,7 @@ const markers = [
     name: 'Alahan Monastery',
     type: 'antics',
     position: { lat: 36.791389, lng: 33.353611 },
-    link: "https://www.campupp.com/blog/64b16595a5ba53153b60b325",
+    link: "https://en.wikipedia.org/wiki/Alahan_Monastery",
     desc: "Alahan Monastery is located in Mut district of Mersin and is an important Byzantine structure. It stands out with its impressive architecture and frescoes and is an important center for religious tourism.",
     icon: anticsIcon
   },
@@ -130,7 +130,7 @@ const markers = [
     name: 'Kaçkar Mountains National Park',
     type: 'nationalParks',
     position: { lat: 40.8403, lng: 41.1029 },
-    link: "https://www.campupp.com/blog/64b12b554474824973f1232c",
+    link: "https://en.wikipedia.org/wiki/Ka%C3%A7kar_Mountains",
     desc: "Kaçkar Mountains National Park is home to the magnificent landscapes of Eastern Black Sea. It is known for its high mountains, glacial lakes, and rich biological diversity.",
     icon: nationalIcons
   },
@@ -139,7 +139,7 @@ const markers = [
     name: 'Olympos Beydağları National Park',
     type: 'nationalParks',
     position: { lat: 36.5947, lng: 30.5104 },
-    link: "https://www.campupp.com/blog/64b14e176d167ee37cc132ca",
+    link: "https://en.wikipedia.org/wiki/Olympus_(Lycia)",
     desc: "Olympos Beydağları National Park is a region in Antalya filled with natural beauty. It is famous for its coastal strip, forests, and the historic city of Olympos.",
     icon: nationalIcons
   },
@@ -148,7 +148,7 @@ const markers = [
     name: 'Yedigöller National Park',
     type: 'nationalParks',
     position: { lat: 40.9373, lng: 31.7408 },
-    link: "https://www.campupp.com/blog/64b1540bb4c2e5d6ba18f9e2",
+    link: "https://en.wikipedia.org/wiki/Yedig%C3%B6ller_National_Park",
     desc: "Yedigöller National Park encompasses a fascinating natural area within Bolu's Gölcük Nature Park. It is famous for its seven lakes, hiking trails, and pine forests. It serves as a wonderful escape, offering visitors the tranquility and beauty of nature.",
     icon: nationalIcons
   },
@@ -157,7 +157,7 @@ const markers = [
     name: 'Munzur Valley National Park',
     type: 'nationalParks',
     position: { lat: 39.1350, lng: 39.4941 },
-    link: "https://www.campupp.com/blog/64b15c75b17a68f6beff710e",
+    link: "https://en.wikipedia.org/wiki/Munzur_Valley_National_Park",
     desc: "Munzur Valley National Park is a protected park preserving the natural beauty of Tunceli. It stands out with its mountains, valleys, waterfalls, and rich flora and fauna diversity.",
     icon: nationalIcons
   },
@@ -166,7 +166,7 @@ const markers = [
     name: 'Kaz Mountains National Park',
     type: 'nationalParks',
     position: { lat: 39.6636, lng: 26.9456 },
-    link: "https://www.campupp.com/blog/64b132c24474824973f1233e",
+    link: "https://en.wikipedia.org/wiki/Mount_Ida_(Turkey)",
     desc: "Kaz Mountains National Park is home to the natural wonders of Çanakkale. It is known for its lush forests, endemic plant species, and trekking routes.",
     icon: nationalIcons
   },
@@ -175,7 +175,7 @@ const markers = [
     name: 'Uludağ National Park',
     type: 'nationalParks',
     position: { lat: 40.11236822936349, lng: 29.07397314632423 },
-    link: "https://www.campupp.com/blog/64b17859fbefa9181ee1675f",
+    link: "https://en.wikipedia.org/wiki/Uluda%C4%9F",
     desc: "Uludağ National Park is a natural treasure nestled among the mysterious mountains of Bursa. Its distinguishing features include soaring mountain peaks, pine forests, and rich flora and fauna diversity.",
     icon: nationalIcons
   },
@@ -184,7 +184,7 @@ const markers = [
     name: 'İğneada Longoz Forests National Park',
     type: 'nationalParks',
     position: { lat: 41.8232, lng: 27.9536 },
-    link: "https://www.campupp.com/blog/64b12f274474824973f12336",
+    link: "https://en.wikipedia.org/wiki/%C4%B0%C4%9Fneada_Floodplain_Forests_National_Park",
     desc: "İğneada Longoz Forests National Park is one of the natural treasures of Kırklareli. It is famous for its longoz forests, wetlands, and endemic plant and animal species.",
     icon: nationalIcons
   },
@@ -193,7 +193,7 @@ const markers = [
     name: 'Uzungöl',
     type: 'natural',
     position: { lat: 40.6194, lng: 40.6194 },
-    link: "https://www.campupp.com/blog/64b1270e4474824973f12320",
+    link: "https://en.wikipedia.org/wiki/Uzung%C3%B6l",
     desc: "Uzungöl is a region in Trabzon famous for its natural beauty. It captivates visitors with its magnificent lake, green forests, and mountain views.",
     icon: naturalIcons
   },
@@ -202,7 +202,7 @@ const markers = [
     name: 'Pamukkale Travertines',
     type: 'natural',
     position: { lat: 37.9137, lng: 29.1185 },
-    link: "https://www.campupp.com/blog/64b104c4e8a2a158a8388284",
+    link: "https://en.wikipedia.org/wiki/Pamukkale",
     desc: "Pamukkale Travertines are famous for their white travertine terraces and thermal waters. It is a unique place where natural and cultural heritage converge.",
     icon: naturalIcons
   },
@@ -211,7 +211,7 @@ const markers = [
     name: 'Cappadocia',
     type: 'natural',
     position: { lat: 38.6587, lng: 34.8532 },
-    link: "https://www.campupp.com/blog/64b125344474824973f12318",
+    link: "https://en.wikipedia.org/wiki/Cappadocia",
     desc: "Cappadocia is famous for its fairy chimneys, underground cities, and unique rock formations. It is a popular tourist destination known worldwide.",
     icon: naturalIcons
   },
@@ -220,7 +220,7 @@ const markers = [
     name: 'Lake Van',
     type: 'natural',
     position: { lat: 38.6140, lng: 42.9182 },
-    link: "https://www.campupp.com/blog/64b1242c4474824973f12310",
+    link: "https://en.wikipedia.org/wiki/Lake_Van",
     desc: "Lake Van is the largest lake in Turkey and is known for its impressive landscapes, turquoise waters, and the historic Akdamar Island.",
     icon: naturalIcons
   },
@@ -229,7 +229,7 @@ const markers = [
     name: 'Lycian Way',
     type: 'hiking',
     position: { lat: 36.6829, lng: 30.5307 },
-    link: "https://www.campupp.com/blog/64b0f869891ed62b93b95db8",
+    link: "https://en.wikipedia.org/wiki/Lycian_Way",
     desc: "The Lycian Way is one of Turkey's most famous hiking trails, stretching from Fethiye to Antalya along the Lycian coast.",
     icon: trekkingIcons
   },
@@ -238,7 +238,7 @@ const markers = [
     name: 'Saint Paul Trail',
     type: 'hiking',
     position: { lat: 38.2995, lng: 31.1758 },
-    link: "https://www.campupp.com/blog/64b0fb4ae62b791c619c422d",
+    link: "https://en.wikipedia.org/wiki/Saint_Paul_Trail",
     desc: "The Saint Paul Trail is a historical hiking route that spans from west to east across Turkey, starting from the Pisidia region and continuing to Antalya.",
     icon: trekkingIcons
   },
@@ -247,7 +247,7 @@ const markers = [
     name: 'Phrygian Way',
     type: 'hiking',
     position: { lat: 39.09106152062335, lng: 30.420948632876044 },
-    link: "https://www.campupp.com/blog/64b0fe0fe62b791c619c4235",
+    link: "https://en.wikipedia.org/wiki/Phrygian_Way",
     desc: "The Phrygian Way follows a hiking route in the ancient Phrygia region between Afyonkarahisar and Kütahya, ideal for exploring historical ruins.",
     icon: trekkingIcons
   },
@@ -256,7 +256,7 @@ const markers = [
     name: 'Boztepe Trail',
     type: 'hiking',
     position: { lat: 40.9971015429749, lng: 39.7330785252 },
-    link: "https://www.campupp.com/blog/64b0fefee62b791c619c423d",
+    link: "https://en.wikipedia.org/wiki/Boztepe_Hill,_Trabzon",
     desc: "Boztepe Trail covers the hiking route to Boztepe Hill in Trabzon, offering a magnificent view of the Black Sea from the top.",
     icon: trekkingIcons
   },
@@ -265,7 +265,7 @@ const markers = [
     name: 'St. Nicholas Way',
     type: 'hiking',
     position: { lat: 36.24563573809273, lng: 29.9857186719781 },
-    link: "https://www.campupp.com/blog/64b0ffc8e62b791c619c4247",
+    link: "https://cultureroutesinturkey.com/blog-2/waymarking-the-st-nicholas-ways/",
     desc: "The St. Nicholas Way is a historical hiking trail starting from Demre in Antalya and leading to the ancient city of Myra, believed to be the home of Santa Claus. This route is an impressive path that includes ancient ruins, coastal views, and historic villages, making it interesting for history and nature enthusiasts.",
     icon: trekkingIcons
   },
@@ -274,7 +274,7 @@ const markers = [
     name: 'Patara Beach',
     type: 'beach',
     position: { lat: 36.27676189261827, lng: 29.284411772845534 },
-    link: "https://www.campupp.com/blog/64aff02d901d8aac5495fef8",
+    link: "https://en.wikipedia.org/wiki/Patara_Beach",
     desc: "Patara Beach is located in Kaş, Antalya, and is famous for its 18-kilometer-long sandy beach. It is also one of the nesting areas for loggerhead sea turtles (Caretta caretta).",
     icon: beachesIcons
   },
@@ -283,7 +283,7 @@ const markers = [
     name: 'Çeşme Altınkum Beach',
     type: 'beach',
     position: { lat: 38.27141381606385, lng: 26.259429422647813 },
-    link: "https://www.campupp.com/blog/64aff375ec8e0f8803206e4d",
+    link: "https://en.wikipedia.org/wiki/Alt%C4%B1nkum",
     desc: "Çeşme Altınkum Beach is located in Çeşme, İzmir and is known for its sandy beach and turquoise waters. It offers water sports facilities as well.",
     icon: beachesIcons
   },
@@ -292,7 +292,7 @@ const markers = [
     name: 'Cleopatra Beach',
     type: 'beach',
     position: { lat: 36.553757257332, lng: 31.972644655040686 },
-    link: "https://www.campupp.com/blog/64aff545ec8e0f8803206e55",
+    link: "https://beachsearcher.com/en/beach/792203155/kleopatra-beach",
     desc: "Cleopatra Beach is located south of Alanya and is famous for its white sand and crystal-clear waters. It is one of the most beautiful beaches on the Riviera.",
     icon: beachesIcons
   },
@@ -301,7 +301,7 @@ const markers = [
     name: 'Çıralı Beach',
     type: 'beach',
     position: { lat: 36.417698108076344, lng: 30.484157303884793 },
-    link: "https://www.campupp.com/blog/64aff6b6ec8e0f8803206e5d",
+    link: "https://www.worldbeachguide.com/turkey/cirali-beach.htm",
     desc: "Çıralı Beach is located in Kemer, Antalya and is known for its natural beauty, peaceful atmosphere, and the remains of an ancient volcano.",
     icon: beachesIcons
   },
@@ -310,7 +310,7 @@ const markers = [
     name: 'Akyarlar Beach',
     type: 'beach',
     position: { lat: 36.970369432253, lng: 27.29954276335657 },
-    link: "https://www.campupp.com/blog/64aff93919da21016f803a05",
+    link: "https://beachsearcher.com/en/beach/792202381/akyarlar-beach",
     desc: "Akyarlar Beach is located in Bodrum and is known for its long sandy beach, tranquil atmosphere, and windsurfing opportunities.",
     icon: beachesIcons
   },
@@ -319,7 +319,7 @@ const markers = [
     name: 'Ölüdeniz',
     type: 'beach',
     position: { lat: 36.5502914781611, lng: 29.114654997644518 },
-    link: "https://www.campupp.com/blog/64affabc19da21016f803a11",
+    link: "https://en.wikipedia.org/wiki/%C3%96l%C3%BCdeniz",
     desc: "Ölüdeniz is a famous beach resort in Fethiye, known for its turquoise-colored lagoon, stunning views, and paragliding activities.",
     icon: beachesIcons
   },
@@ -328,7 +328,7 @@ const markers = [
     name: 'Kabak Cove',
     type: 'beach',
     position: { lat: 36.46139474375252, lng: 29.124948610845266 },
-    link: "https://www.campupp.com/blog/64affde80b2b0c9cbdadd780",
+    link: "https://discoveroludeniz.com/listing/kabak-cove/",
     desc: "Kabak Cove is located in Fethiye and is known for its natural beauty, pine forests, and turquoise waters.",
     icon: beachesIcons
   },
@@ -337,7 +337,7 @@ const markers = [
     name: 'Kaputaş Beach',
     type: 'beach',
     position: { lat: 36.228851404184304, lng: 29.4501405661368 },
-    link: "https://www.campupp.com/blog/64b0003d19da21016f803a28",
+    link: "https://en.wikipedia.org/wiki/Kaputa%C5%9F_Beach",
     desc: "Kaputaş Beach is located between Kaş and Kalkan and is famous for its turquoise sea and magnificent natural cliffs.",
     icon: beachesIcons
   },
@@ -346,7 +346,7 @@ const markers = [
     name: 'Altınoluk Beach',
     type: 'beach',
     position: { lat: 39.56528835408052, lng: 26.75376307849442 },
-    link: "https://www.campupp.com/blog/64b018ff629683e7542e1556",
+    link: "https://beachsearcher.com/en/beach/792201074/altinoluk-beach",
     desc: "Altınoluk Beach is located in Edremit, Balıkesir and offers visitors a peaceful holiday experience with its long sandy beach, clear waters, and beautiful scenery.",
     icon: beachesIcons
   },
@@ -355,7 +355,7 @@ const markers = [
     name: 'Sığacık Cove',
     type: 'beach',
     position: { lat: 38.1976708951224, lng: 26.78842047080532 },
-    link: "https://www.campupp.com/blog/64b0f458891ed62b93b95dad",
+    link: "https://teosmarina.com.tr/en/sigacik.html",
     desc: "Sığacık Cove is located in Seferihisar, İzmir and is famous for its peaceful atmosphere, natural beauty, and historical texture.",
     icon: beachesIcons
   }
@@ -555,7 +555,7 @@ export default function BlogPost() {
                               <div className='pb-3'>
                                 <p className='font-semibold'>{name}</p>
                                 <p className='pb-3'>{desc}</p>
-                                <Link href={link} className='flex-none rounded-full text-center bg-cc-primary px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'>Daha Fazla Bilgi Alın</Link>
+                                <Link target='_blank' href={link} className='flex-none rounded-full text-center bg-cc-primary px-3 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900'>Daha Fazla Bilgi Alın</Link>
                               </div>
                             </InfoWindowF>
                           ) : null}
