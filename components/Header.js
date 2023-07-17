@@ -58,7 +58,7 @@ export default function Header() {
             Komünite
           </Link>
           <Link href="/explore" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
-            Türkiye'yi Keşfedin
+            Türkiye&apos;yi Keşfedin
           </Link>
           <Link href="/contact" className="hidden md:block text-sm font-semibold leading-6 text-gray-900 ml-5">
             İletişim
