@@ -3,6 +3,7 @@ import Banner from '@/components/Banner'
 import { Disclosure } from '@headlessui/react'
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
 import Script from 'next/script'
+import Explore from '@/components/ExploreBanner'
 
 export default function Guides() {
   return(
@@ -248,6 +249,7 @@ export default function Guides() {
           </div>
         </main> 
         <Banner />
+        <Explore />
     </Layout>
 )
 }

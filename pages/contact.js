@@ -3,6 +3,7 @@ import Banner from '@/components/Banner'
 import Link from "next/link";
 import Script from 'next/script'
 import {HiOutlineMail, HiOutlineDocumentSearch} from "react-icons/hi";
+import Explore from '@/components/ExploreBanner';
 
 export default function Contact() {
   return(
@@ -40,6 +41,7 @@ export default function Contact() {
           </div>
         </main> 
         <Banner />
+        <Explore/>
     </Layout>
 )
 }

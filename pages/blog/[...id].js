@@ -6,6 +6,7 @@ import {useRouter} from "next/router";
 import Link from "next/link";
 import Script from 'next/script'
 import Head from 'next/head'
+import Explore from '@/components/ExploreBanner';
 
 
 export default function BlogPost({title, content, image, shortDesc }) {
@@ -101,6 +102,7 @@ export default function BlogPost({title, content, image, shortDesc }) {
             <div>Araığınız yazı bulunamadı, kaldırılmış olabilir</div>
         )}
         <Banner />
+        <Explore/>
     </Layout>
 )
 }

@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { IoMdClose } from "react-icons/io";
 import { AiOutlineDelete} from "react-icons/ai";
 import Link from "next/link";
+import Explore from "@/components/ExploreBannerEng";
 const categories = [
   'Search for camp mates',
   'Get ideas about the campground',
@@ -432,6 +433,7 @@ export default function Community() {
           </div>
         </main> 
         <Banner />
+        <Explore />
     </Layout>
   );
 }

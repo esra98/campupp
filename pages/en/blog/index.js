@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react"
 import Banner from '@/components/BannerEng'
 import Script from 'next/script'
+import Explore from "@/components/ExploreBannerEng";
 
 export default function Blogs() {
   const [blogs, setBlogs]= useState([])
@@ -127,6 +128,7 @@ export default function Blogs() {
             </div>
         </section>
         <Banner />
+        <Explore />
     </Layout>
   );
 }
