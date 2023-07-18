@@ -19,6 +19,7 @@ import { GrInstagram,GrCircleAlert } from "react-icons/gr";
 import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";
 import Head from 'next/head'
+import Script from 'next/script'
 
 import Link from "next/link";
 let images = [
@@ -28,16 +29,7 @@ export default function CampsiteDetail({title, description}) {
   const {data:session} = useSession();
   const [place, setPlace] = useState([])
   const [placeImages, setPlaceImages] = useState(false)
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalQuestionIsOpen, setModalQuestionIsOpen] = useState(false);
-  const [anonymous,setAnonymous]= useState(false)
-  const [commentTitle, setCommentTitle]= useState("")
-  const [commentDetail, setCommentDetail]= useState("")
-  const [commentImages, setCommentImages]= useState([])
-  const [commentPoint, setCommentPoint]= useState(3)
-  const [questionText, setQuestionText]= useState("")
   const [isReservationModalOpen,setIsReservationModalOpen]= useState(false)
-  const [questionAnonymous,setQuestionAnonymous]= useState(false)
   const router = useRouter();
   const {id} = router.query;
   console.log(id)
@@ -104,6 +96,7 @@ export default function CampsiteDetail({title, description}) {
     };
   return(
     <Layout>
+        <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} />

@@ -20,6 +20,7 @@ import { FaFacebook, FaMapMarkerAlt,FaWhatsapp } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";
 import Head from 'next/head'
 import Link from "next/link";
+import Script from 'next/script'
 
 let images = [
 ];
@@ -92,6 +93,7 @@ export default function CampsiteDetail({title, description}) {
     };
   return(
     <Layout>
+        <Script src="https://platform-api.sharethis.com/js/sharethis.js#property=649a64799fbe9100124b55e5&product=sticky-share-buttons&source=platform" async="async" strategy="lazyOnload"/>
         <Head>
           <title>{title}</title>
           <meta name="description" content={description} />
