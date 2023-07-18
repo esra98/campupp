@@ -73,7 +73,7 @@ export default async function handle(req, res) {
       isEnglishSpoken,isGermanSpoken,isRussianSpoken,isSpanishSpoken,titleEnglish,descriptionEnglish,isPriceVisible,isReservationModuleAvailable,isPaymentCash,isPaymentCreditCard,isPaymentIban,
       isPresentPicnicTable,isReservationModuleBungalowRentingPossible,priceDefaultType,priceBungalow,priceVan,contactTelAlt} = req.body;
     const productDoc = await Campsite.create({
-      user,title,description,price,images,address,district:selectedCounty, city:selectedCity,activitiesYoga, isPublicTransportationPossible,mapLatitute,mapLangtitute,
+      user,title,description,price,images,address,district:selectedCity, city:selectedCounty,activitiesYoga, isPublicTransportationPossible,mapLatitute,mapLangtitute,
       activitiesCanoing, activitiesTrekking, activitiesSurf, activitiesBeachVolleyball,activitiesVolleyball,activitiesSpa, activitiesAtv, activitiesParagliding, activitiesBoatRental, 
       activitiesBoatTour, activitiesPool,isFriendlyAlcohol,isFriendlyKid,isFriendlyRemoteWork,isFriendlyVan,isFriendlyPet, descriptionKid,descriptionPet,descriptionRemoteWork,
       descriptionVan,isPresentBungalow,isPresentBreakfastIncluded,isNearSea,distanceSea,isNearLake, distanceLake,isNearForest, distanceForest,isNearRestaurant, distanceRestaurant,isNearStore,distanceStore,isNearBar,distanceBar,
