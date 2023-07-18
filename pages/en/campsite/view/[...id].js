@@ -448,10 +448,10 @@ export default function CampsiteDetail({title, description}) {
             <div className="p-6">
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="lg:col-span-2 ">
-                        {place?.titleEnglish !=="" && (
+                        {place?.titleEnglish !==""  && (
                             <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{place?.titleEnglish}</h1>
                         )}
-                        {place?.title =="" && (
+                        {place?.titleEnglish === "" && (
                             <h1 className="text-2xl text-gray-900 sm:text-3xl mt-5">{title}</h1>
                         )}
                         <p className="text-gray-800 mt-1 mb-5">{place?.city} / {place?.district}</p>
